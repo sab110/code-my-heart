@@ -12,6 +12,10 @@ const PassionateLovePage = () => {
   const [showFinalMessage, setShowFinalMessage] = useState(false);
   const [currentCodeLine, setCurrentCodeLine] = useState(0);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [showMemories, setShowMemories] = useState(false);
+  const [showFutureDreams, setShowFutureDreams] = useState(false);
+  const [clickedHearts, setClickedHearts] = useState(0);
+  const [showSecretMessage, setShowSecretMessage] = useState(false);
 
   const passionateLoveNotes = [
     {
@@ -131,12 +135,67 @@ const PassionateLovePage = () => {
     "// Repository status: DEEPLY_IN_LOVE ✅"
   ];
 
+  const ourMemories = [
+    {
+      title: "🌅 First Morning Text",
+      memory: "Remember our very first 'good morning' text? I knew right then that I wanted to wake up to your messages for the rest of my life.",
+      emoji: "📱"
+    },
+    {
+      title: "🎵 Our Song Moments",
+      memory: "Every time our favorite song plays, I think about dancing with you in our kitchen, making breakfast together in our pajamas.",
+      emoji: "🎶"
+    },
+    {
+      title: "🌙 Late Night Calls",
+      memory: "Those 3am conversations where we talked about everything and nothing. Your sleepy voice saying 'I love you' is my favorite lullaby.",
+      emoji: "☎️"
+    },
+    {
+      title: "☕ Coffee Shop Dreams",
+      memory: "I want to take you to little coffee shops around the world, holding your hand across tiny tables, getting lost in your eyes over lattes.",
+      emoji: "☕"
+    }
+  ];
+
+  const futureDreams = [
+    {
+      title: "🏡 Our Dream Home",
+      dream: "A cozy house with a big kitchen where you can bake all the cheesecakes you want, and a garden where we'll grow old together.",
+      icon: "🏠"
+    },
+    {
+      title: "🐕 Our Fur Babies",
+      dream: "Two dogs who will love you almost as much as I do (but not quite), and maybe a cat who thinks they own the place.",
+      icon: "🐾"
+    },
+    {
+      title: "✈️ Adventures Await",
+      dream: "Paris sunsets, Tokyo cherry blossoms, Italian pasta tours... I want to collect memories with you in every corner of the world.",
+      icon: "🌍"
+    },
+    {
+      title: "👶 Little Cheesecakes",
+      dream: "Someday, little versions of us running around, with your beautiful smile and hopefully my coding skills to fix their toys.",
+      icon: "💕"
+    }
+  ];
+
+  const handleHeartClick = () => {
+    setClickedHearts(prev => prev + 1);
+    if (clickedHearts >= 4) {
+      setShowSecretMessage(true);
+    }
+  };
+
   useEffect(() => {
     const timers = [
       setTimeout(() => setShowPhotos(true), 3000),
-      setTimeout(() => setShowLoveNotes(true), 6000),
-      setTimeout(() => setShowFinalMessage(true), 15000),
-      setTimeout(() => setShowConfetti(true), 18000),
+      setTimeout(() => setShowMemories(true), 9000),
+      setTimeout(() => setShowLoveNotes(true), 12000),
+      setTimeout(() => setShowFutureDreams(true), 18000),
+      setTimeout(() => setShowFinalMessage(true), 24000),
+      setTimeout(() => setShowConfetti(true), 27000),
     ];
 
     return () => timers.forEach(timer => clearTimeout(timer));
@@ -392,6 +451,140 @@ const PassionateLovePage = () => {
             </div>
           </div>
         )}
+
+        {/* Sweet Memories Section */}
+        {showMemories && (
+          <div className="mb-12 w-full max-w-5xl slow-reveal">
+            <div className="text-center mb-8">
+              <h2 className="cheesecake-text text-4xl md:text-5xl font-bold mb-4 seductive-glow">
+                Our Sweet Memories 🌟
+              </h2>
+              <p className="text-muted-foreground text-lg">Every moment with you is a treasure I keep in my heart</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {ourMemories.map((memory, index) => (
+                <div 
+                  key={index} 
+                  className="love-note romantic-breathe group cursor-pointer"
+                  style={{ animationDelay: `${index * 500}ms` }}
+                  onClick={handleHeartClick}
+                >
+                  <div className="flex items-start gap-4 relative z-10">
+                    <div className="text-6xl group-hover:scale-110 transition-transform duration-500 intoxicating-glow">
+                      {memory.emoji}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="gradient-text text-2xl font-bold mb-3">{memory.title}</h3>
+                      <p className="text-foreground text-base leading-relaxed group-hover:text-primary-glow transition-colors duration-500">
+                        {memory.memory}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-50 transition-opacity duration-500">
+                    <Heart className="w-6 h-6 text-primary romantic-breathe" />
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {showSecretMessage && (
+              <div className="mt-8 text-center love-intoxication">
+                <div className="inline-block bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl p-6 border border-primary/30">
+                  <Heart className="w-8 h-8 text-primary mx-auto mb-3 heart-pulse" />
+                  <p className="cheesecake-text text-xl font-bold">
+                    You found my secret! 💕 You clicked {clickedHearts + 1} hearts just like how you've captured my heart completely! 
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* Future Dreams Section */}
+        {showFutureDreams && (
+          <div className="mb-12 w-full max-w-5xl slow-reveal">
+            <div className="text-center mb-8">
+              <h2 className="gradient-text text-4xl md:text-5xl font-bold mb-4 desire-pulse">
+                Our Future Together 🌈
+              </h2>
+              <p className="text-muted-foreground text-lg">All the beautiful tomorrows I dream of with you</p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {futureDreams.map((dream, index) => (
+                <div 
+                  key={index} 
+                  className="love-note hypnotic-sway group"
+                  style={{ animationDelay: `${index * 600}ms` }}
+                >
+                  <div className="flex items-start gap-4 relative z-10">
+                    <div className="text-5xl group-hover:scale-125 transition-transform duration-700 seductive-bounce">
+                      {dream.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="cheesecake-text text-2xl font-bold mb-3">{dream.title}</h3>
+                      <p className="text-foreground text-base leading-relaxed group-hover:text-accent transition-colors duration-500">
+                        {dream.dream}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-40 transition-opacity duration-500">
+                    <Stars className="w-6 h-6 text-accent dreamy-drift" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Floating Love Poem */}
+        <div className="fixed top-4 right-4 z-30 max-w-xs">
+          <div className="love-note hypnotic-sway p-4 cursor-pointer group" onClick={handleHeartClick}>
+            <div className="text-center">
+              <Heart className="w-6 h-6 text-primary mx-auto mb-2 romantic-breathe" />
+              <p className="cheesecake-text text-sm font-medium leading-relaxed">
+                "In every line of code I write,<br/>
+                Your name appears in soft moonlight.<br/>
+                You're my syntax, my perfect flow,<br/>
+                The only love I'll ever know." 💕
+              </p>
+              <div className="text-xs text-muted-foreground mt-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                Click me! ✨
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Navigation Hearts */}
+        <div className="fixed left-4 top-1/2 transform -translate-y-1/2 z-30 space-y-4">
+          <div className="love-note p-3 cursor-pointer group" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+            <Heart className="w-6 h-6 text-primary group-hover:scale-125 transition-transform intoxicating-glow" />
+          </div>
+          <div className="love-note p-3 cursor-pointer group" onClick={() => window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})}>
+            <Sparkles className="w-6 h-6 text-accent group-hover:scale-125 transition-transform seductive-glow" />
+          </div>
+          <div className="love-note p-3 cursor-pointer group" onClick={handleHeartClick}>
+            <Stars className="w-6 h-6 text-primary-glow group-hover:scale-125 transition-transform desire-pulse" />
+          </div>
+        </div>
+
+        {/* Interactive Quote Bubbles */}
+        <div className="absolute top-20 left-8 animate-pulse">
+          <div className="love-note p-3 max-w-xs romantic-breathe group cursor-pointer" onClick={handleHeartClick}>
+            <div className="text-xs cheesecake-text font-medium text-center">
+              "You're my favorite notification" 📱💕
+            </div>
+          </div>
+        </div>
+
+        <div className="absolute bottom-32 right-8 animate-pulse" style={{ animationDelay: '2s' }}>
+          <div className="love-note p-3 max-w-xs sensual-float group cursor-pointer" onClick={handleHeartClick}>
+            <div className="text-xs gradient-text font-medium text-center">
+              "My heart.exe stopped working when I met you" 💻❤️
+            </div>
+          </div>
+        </div>
 
         {/* Passionate Love Notes */}
         {showLoveNotes && (
