@@ -3,7 +3,7 @@ import StarField from '../components/StarField';
 import TypewriterText from '../components/TypewriterText';
 import ConfettiEffect from '../components/ConfettiEffect';
 import HeartIcon from '../components/HeartIcon';
-import { Heart, Sparkles, Stars, Code, Coffee, Moon, Sun } from 'lucide-react';
+import { Heart, Sparkles, Stars, Code, Coffee, Moon, Sun, Zap, Flame, Eye } from 'lucide-react';
 
 const PassionateLovePage = () => {
   const [currentSection, setCurrentSection] = useState(0);
@@ -221,11 +221,18 @@ const PassionateLovePage = () => {
         {/* Passionate Header */}
         <div className="text-center mb-8 relative">
           <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
-            <div className="flex gap-8 justify-center">
-              <Heart className="w-12 h-12 text-primary intimate-pulse" />
-              <Stars className="w-16 h-16 text-primary-glow dreamy-drift" />
-              <Sparkles className="w-10 h-10 text-accent hypnotic-sway" />
-              <Heart className="w-12 h-12 text-primary intimate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="flex gap-8 justify-center relative">
+              <Heart className="w-12 h-12 text-primary intoxicating-glow" />
+              <Stars className="w-16 h-16 text-primary-glow desire-pulse" />
+              <Sparkles className="w-10 h-10 text-accent love-intoxication" />
+              <Heart className="w-12 h-12 text-primary intoxicating-glow" style={{ animationDelay: '1s' }} />
+              
+              {/* Orbiting Love Elements */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Zap className="w-4 h-4 text-accent hypnotic-orbit" style={{ animationDelay: '0s' }} />
+                <Flame className="w-5 h-5 text-primary hypnotic-orbit" style={{ animationDelay: '2s' }} />
+                <Eye className="w-4 h-4 text-primary-glow hypnotic-orbit" style={{ animationDelay: '4s' }} />
+              </div>
             </div>
           </div>
           
@@ -447,52 +454,76 @@ const PassionateLovePage = () => {
           <div className="text-center mb-16 slow-reveal max-w-4xl">
             <div className="relative mb-12">
               <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
-                <div className="flex gap-8 justify-center">
-                  <Heart className="w-16 h-16 text-primary passion-pulse" />
-                  <Sparkles className="w-12 h-12 text-primary-glow sensual-float" />
-                  <Heart className="w-16 h-16 text-primary passion-pulse" />
+                <div className="flex gap-8 justify-center relative">
+                  <Heart className="w-16 h-16 text-primary desire-pulse" />
+                  <Sparkles className="w-12 h-12 text-primary-glow seductive-bounce" />
+                  <Heart className="w-16 h-16 text-primary desire-pulse" style={{ animationDelay: '2s' }} />
+                  
+                  {/* More Orbiting Elements */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Flame className="w-6 h-6 text-accent hypnotic-orbit" style={{ animationDelay: '1s' }} />
+                    <Zap className="w-5 h-5 text-primary hypnotic-orbit" style={{ animationDelay: '3s' }} />
+                    <Eye className="w-4 h-4 text-primary-glow hypnotic-orbit" style={{ animationDelay: '5s' }} />
+                  </div>
                 </div>
               </div>
               
-              <h1 className="gradient-text text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight passion-pulse">
+              <h1 className="gradient-text text-6xl md:text-8xl lg:text-9xl font-bold mb-8 leading-tight love-intoxication">
                 Will You Marry Me,
               </h1>
-              <h1 className="cheesecake-text text-6xl md:text-8xl lg:text-9xl font-bold mb-8">
+              <h1 className="cheesecake-text text-6xl md:text-8xl lg:text-9xl font-bold mb-8 sensual-tremble">
                 My Sweet Cheesecake?
               </h1>
-              <div className="text-4xl md:text-5xl mb-8 sensual-float">🍰💍✨💕🔥</div>
+              <div className="text-4xl md:text-5xl mb-8 seductive-bounce">🍰💍✨💕🔥</div>
             </div>
             
             <div className="space-y-6 mb-12">
-              <p className="gradient-text text-3xl md:text-4xl font-bold leading-relaxed">
+              <p className="gradient-text text-3xl md:text-4xl font-bold leading-relaxed intoxicating-glow">
                 Be the final commit to my repository of life
               </p>
-              <p className="cheesecake-text text-2xl md:text-3xl font-semibold">
+              <p className="cheesecake-text text-2xl md:text-3xl font-semibold romantic-breathe">
                 Let's merge our hearts into one beautiful codebase forever 💕
               </p>
-              <p className="code-text text-xl md:text-2xl font-mono">
+              <p className="code-text text-xl md:text-2xl font-mono love-whisper">
                 // Born: February 9, 2001 - The day my soulmate entered this world 🌟
               </p>
-              <p className="text-accent text-lg md:text-xl font-medium">
+              <p className="text-accent text-lg md:text-xl font-medium magnetic-pull">
                 You're not just the sweetest dessert in life's buffet, you're the entire feast 🍰
               </p>
             </div>
 
             {/* Interactive Love Button */}
-            <div className="mb-12">
+            <div className="mb-12 relative">
+              {/* Surrounding Hearts */}
+              <div className="absolute -top-8 -left-8">
+                <Heart className="w-8 h-8 text-primary hypnotic-orbit opacity-60" />
+              </div>
+              <div className="absolute -top-12 -right-6">
+                <Sparkles className="w-6 h-6 text-accent seductive-bounce opacity-70" />
+              </div>
+              <div className="absolute -bottom-6 -left-10">
+                <Flame className="w-7 h-7 text-primary-glow dreamy-drift opacity-50" />
+              </div>
+              <div className="absolute -bottom-8 -right-8">
+                <Heart className="w-9 h-9 text-primary sensual-tremble opacity-65" />
+              </div>
+              
               <button 
                 onClick={handleLoveExplosion}
-                className="proposal-button passion-pulse text-3xl px-16 py-8 rounded-3xl font-bold transform hover:scale-110 transition-all duration-500 relative overflow-hidden"
+                className="proposal-button desire-pulse text-3xl px-16 py-8 rounded-3xl font-bold transform hover:scale-110 transition-all duration-500 relative overflow-hidden group"
                 style={{
                   background: 'var(--gradient-passion)',
-                  boxShadow: 'var(--shadow-passion)',
+                  boxShadow: 'var(--shadow-seductive)',
                   border: '3px solid rgba(255,255,255,0.3)'
                 }}
               >
-                <span className="relative z-10 flex items-center gap-4">
-                  <Heart className="w-8 h-8" />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-500">
+                  <div className="w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-[shimmer_2s_infinite]"></div>
+                </div>
+                <span className="relative z-10 flex items-center gap-4 sensual-tremble">
+                  <Heart className="w-8 h-8 intoxicating-glow" />
                   Click if you love me forever! 
-                  <Heart className="w-8 h-8" />
+                  <Heart className="w-8 h-8 intoxicating-glow" />
                 </span>
               </button>
             </div>
