@@ -240,58 +240,368 @@ const PassionateLovePage = () => {
   const handleLoveExplosion = () => {
     setShowConfetti(true);
     
-    // Create an overwhelming love message
+    // Create an irresistible romantic experience with mini love games
     const loveDiv = document.createElement('div');
     loveDiv.innerHTML = `
-      <div style="
+      <div id="romantic-experience" style="
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(45deg, hsl(340 90% 70% / 0.95), hsl(320 85% 60% / 0.95));
+        background: linear-gradient(135deg, hsl(340 90% 70% / 0.98), hsl(320 85% 60% / 0.98), hsl(300 80% 50% / 0.98));
         display: flex;
         align-items: center;
         justify-content: center;
         z-index: 10000;
-        animation: passion-entrance 1s ease-out;
+        animation: passion-entrance 1.5s ease-out;
+        overflow-y: auto;
       ">
+        <!-- Floating romantic elements -->
+        <div style="position: absolute; top: 10%; left: 10%; animation: float 3s ease-in-out infinite;">💕</div>
+        <div style="position: absolute; top: 20%; right: 15%; animation: float 2.5s ease-in-out infinite 0.5s;">🌹</div>
+        <div style="position: absolute; bottom: 15%; left: 20%; animation: float 3.5s ease-in-out infinite 1s;">✨</div>
+        <div style="position: absolute; bottom: 25%; right: 10%; animation: float 2.8s ease-in-out infinite 1.5s;">💍</div>
+        <div style="position: absolute; top: 50%; left: 5%; animation: float 3.2s ease-in-out infinite 0.8s;">🔥</div>
+        <div style="position: absolute; top: 40%; right: 5%; animation: float 2.7s ease-in-out infinite 2s;">🍰</div>
+
         <div style="
           text-align: center;
           color: white;
           font-family: 'Inter', sans-serif;
-          max-width: 600px;
+          max-width: 700px;
           padding: 2rem;
+          backdrop-filter: blur(20px);
+          border-radius: 20px;
+          border: 2px solid rgba(255,255,255,0.3);
+          box-shadow: 0 20px 60px rgba(0,0,0,0.4);
         ">
-          <h1 style="font-size: 3rem; font-weight: 800; margin-bottom: 2rem; text-shadow: 0 0 20px rgba(0,0,0,0.5);">
-            💕 YES TO FOREVER! 💕
-          </h1>
-          <p style="font-size: 1.5rem; margin-bottom: 2rem; line-height: 1.6;">
-            My beautiful cheesecake, you've just made me the happiest man alive! 
-            Our love story is about to become the most beautiful code ever written! 🍰💍
-          </p>
-          <div style="font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.95;">
-            // Love compiled successfully ✅<br>
-            // No bugs found in our relationship 💖<br>
-            // Ready for production: MARRIAGE.exe 🎉<br>
-            // Status: DEEPLY IN LOVE 🔥
+          <div id="game-content">
+            <!-- Phase 1: Initial Explosion -->
+            <div id="phase-1" style="animation: scale-in 1s ease-out;">
+              <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(255,255,255,0.8); animation: heartbeat 2s ease-in-out infinite;">
+                💕 YES TO FOREVER! 💕
+              </h1>
+              <p style="font-size: 1.6rem; margin-bottom: 2rem; line-height: 1.6; text-shadow: 0 0 10px rgba(255,255,255,0.5);">
+                My beautiful cheesecake, you've just made me the happiest man alive! 
+                But wait... let's make this even more special! 🍰💍
+              </p>
+              
+              <!-- Mini Love Game 1: Heart Collection -->
+              <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #ffccdd;">💖 Love Game 1: Collect My Hearts 💖</h3>
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;">Click all the hearts to unlock my deepest confession!</p>
+                <div id="heart-game" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 1rem 0;">
+                  <span class="clickable-heart" onclick="collectHeart(this)" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite;">💖</span>
+                  <span class="clickable-heart" onclick="collectHeart(this)" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.3s;">💕</span>
+                  <span class="clickable-heart" onclick="collectHeart(this)" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.6s;">💗</span>
+                  <span class="clickable-heart" onclick="collectHeart(this)" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.9s;">💓</span>
+                  <span class="clickable-heart" onclick="collectHeart(this)" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 1.2s;">💘</span>
+                </div>
+                <div id="heart-count" style="font-size: 1.2rem; color: #ffddee;">Hearts Collected: <span id="collected">0</span>/5</div>
+              </div>
+              
+              <button onclick="startLoveQuiz()" style="
+                padding: 1.2rem 2.5rem;
+                background: linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,200,220,0.4));
+                border: 2px solid rgba(255,255,255,0.6);
+                border-radius: 15px;
+                color: white;
+                cursor: pointer;
+                font-weight: 700;
+                font-size: 1.3rem;
+                transition: all 0.3s;
+                backdrop-filter: blur(10px);
+                text-shadow: 0 0 10px rgba(0,0,0,0.5);
+                box-shadow: 0 10px 30px rgba(255,255,255,0.2);
+                animation: romantic-glow 2s ease-in-out infinite alternate;
+              " onmouseover="this.style.background='linear-gradient(45deg, rgba(255,255,255,0.6), rgba(255,200,220,0.6))'; this.style.transform='scale(1.05)'" onmouseout="this.style.background='linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,200,220,0.4))'; this.style.transform='scale(1)'">
+                💘 Continue Our Love Journey 💘
+              </button>
+            </div>
+
+            <!-- Phase 2: Love Quiz (Hidden initially) -->
+            <div id="phase-2" style="display: none;">
+              <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; animation: romantic-glow 2s ease-in-out infinite alternate;">
+                💫 Love Quiz: How Well Do You Know My Heart? 💫
+              </h2>
+              <div id="quiz-container" style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <!-- Quiz questions will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Phase 3: Love Declarations (Hidden initially) -->
+            <div id="phase-3" style="display: none;">
+              <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 2rem; animation: heartbeat 2s ease-in-out infinite;">
+                🔥 My Passionate Confessions 🔥
+              </h2>
+              <div id="confession-container" style="max-height: 400px; overflow-y: auto; padding: 1rem;">
+                <!-- Confessions will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Phase 4: Final Commitment (Hidden initially) -->
+            <div id="phase-4" style="display: none;">
+              <h1 style="font-size: 4rem; font-weight: 800; margin-bottom: 2rem; background: linear-gradient(45deg, #ff6b9d, #fff, #ff9a85); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: rainbow 3s ease-in-out infinite;">
+                🌟 FOREVER COMMITTED 🌟
+              </h1>
+              <div style="font-size: 1.3rem; margin-bottom: 2rem; line-height: 1.8;">
+                <p style="margin-bottom: 1rem;">🔥 <strong>Love Compiled Successfully!</strong> ✅</p>
+                <p style="margin-bottom: 1rem;">💖 <strong>No Bugs Found in Our Relationship!</strong> ✅</p>
+                <p style="margin-bottom: 1rem;">🎉 <strong>Ready for Production: MARRIAGE.exe</strong> ✅</p>
+                <p style="margin-bottom: 1rem;">💍 <strong>Status: ETERNALLY YOURS</strong> ✅</p>
+              </div>
+              
+              <!-- Love Meter -->
+              <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.2); border-radius: 15px;">
+                <h3 style="margin-bottom: 1rem;">💕 Love Intensity Meter 💕</h3>
+                <div style="width: 100%; height: 20px; background: rgba(255,255,255,0.3); border-radius: 10px; overflow: hidden;">
+                  <div style="width: 100%; height: 100%; background: linear-gradient(90deg, #ff6b9d, #fff, #ff9a85); animation: love-fill 3s ease-in-out forwards;"></div>
+                </div>
+                <p style="margin-top: 0.5rem; font-size: 1.1rem;">INFINITE LOVE DETECTED! 🔥💯</p>
+              </div>
+
+              <button onclick="closeLoveExperience()" style="
+                padding: 1.5rem 3rem;
+                background: linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,200,220,0.5));
+                border: 3px solid rgba(255,255,255,0.7);
+                border-radius: 20px;
+                color: white;
+                cursor: pointer;
+                font-weight: 800;
+                font-size: 1.4rem;
+                transition: all 0.3s;
+                backdrop-filter: blur(15px);
+                text-shadow: 0 0 15px rgba(0,0,0,0.5);
+                box-shadow: 0 15px 40px rgba(255,255,255,0.3);
+                animation: eternal-glow 2s ease-in-out infinite alternate;
+              " onmouseover="this.style.transform='scale(1.1) rotate(2deg)'" onmouseout="this.style.transform='scale(1) rotate(0deg)'">
+                💕 Let's Plan Our Eternal Love Story! 💕
+              </button>
+            </div>
           </div>
-          <button onclick="this.parentElement.parentElement.remove()" style="
-            padding: 1rem 2rem;
-            background: rgba(255,255,255,0.3);
-            border: 2px solid rgba(255,255,255,0.5);
-            border-radius: 1rem;
-            color: white;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1.2rem;
-            transition: all 0.3s;
-            backdrop-filter: blur(10px);
-          " onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.3)'">
-            Close & Let's Plan Our Forever! 💕
-          </button>
         </div>
       </div>
+
+      <style>
+        @keyframes passion-entrance {
+          0% { opacity: 0; transform: scale(0.5); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes heartbeat {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        @keyframes romantic-glow {
+          0% { box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+          100% { box-shadow: 0 0 40px rgba(255,200,220,0.8); }
+        }
+        @keyframes eternal-glow {
+          0% { box-shadow: 0 0 30px rgba(255,255,255,0.6); }
+          100% { box-shadow: 0 0 50px rgba(255,100,150,0.9); }
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
+        }
+        @keyframes scale-in {
+          0% { opacity: 0; transform: scale(0.8); }
+          100% { opacity: 1; transform: scale(1); }
+        }
+        @keyframes rainbow {
+          0% { filter: hue-rotate(0deg); }
+          100% { filter: hue-rotate(360deg); }
+        }
+        @keyframes love-fill {
+          0% { width: 0%; }
+          100% { width: 100%; }
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); opacity: 0.7; }
+          50% { transform: scale(1.2); opacity: 1; }
+        }
+      </style>
+
+      <script>
+        let heartsCollected = 0;
+        let currentQuizQuestion = 0;
+        
+        const loveQuestions = [
+          {
+            question: "What's my favorite thing about you?",
+            options: ["Your smile", "Your laugh", "Everything about you", "Your beautiful soul"],
+            correct: 2,
+            response: "YES! Everything about you drives me absolutely crazy with love! 💕"
+          },
+          {
+            question: "What do I call you when I'm being extra romantic?",
+            options: ["Beautiful", "My Sweet Cheesecake", "Gorgeous", "My Love"],
+            correct: 1,
+            response: "Perfect! You're my sweet, irresistible cheesecake! 🍰💖"
+          },
+          {
+            question: "How many times do I think about you daily?",
+            options: ["A few times", "Often", "Every single moment", "A lot"],
+            correct: 2,
+            response: "EXACTLY! You never leave my thoughts, not even for a second! 🔥"
+          }
+        ];
+
+        const passionateConfessions = [
+          "🔥 Every morning I wake up, my first thought is your beautiful face and that gorgeous smile that makes my heart race uncontrollably!",
+          "💕 When you laugh, it's like hearing the most beautiful melody that heals every part of my soul and makes me fall deeper in love!",
+          "🌙 I love watching you sleep peacefully next to me, how you curl up against me, making me feel like the luckiest man alive!",
+          "💋 Your kiss is my favorite addiction - one taste and I'm completely intoxicated, craving more of your love forever!",
+          "✨ The way you say my name sends electricity through my entire being, igniting fires of passion I never knew existed!",
+          "🍰 You're sweeter than any dessert, more addictive than any drug, and more essential than the air I breathe!",
+          "💍 I don't just want to marry you - I want to worship you, adore you, and love you beyond the boundaries of time and space!"
+        ];
+        
+        function collectHeart(heartElement) {
+          heartElement.style.transform = 'scale(1.5)';
+          heartElement.style.opacity = '1';
+          heartElement.style.color = '#ff4081';
+          heartsCollected++;
+          document.getElementById('collected').textContent = heartsCollected;
+          
+          setTimeout(() => {
+            heartElement.style.display = 'none';
+          }, 500);
+          
+          if (heartsCollected === 5) {
+            setTimeout(() => {
+              document.getElementById('heart-count').innerHTML = '<span style="color: #ff4081; font-size: 1.4rem; animation: heartbeat 1s infinite;">💖 All hearts collected! You own my entire heart! 💖</span>';
+            }, 1000);
+          }
+        }
+        
+        function startLoveQuiz() {
+          document.getElementById('phase-1').style.display = 'none';
+          document.getElementById('phase-2').style.display = 'block';
+          showQuizQuestion();
+        }
+        
+        function showQuizQuestion() {
+          if (currentQuizQuestion < loveQuestions.length) {
+            const question = loveQuestions[currentQuizQuestion];
+            const quizContainer = document.getElementById('quiz-container');
+            
+            quizContainer.innerHTML = \`
+              <div style="background: rgba(255,255,255,0.15); padding: 2rem; border-radius: 15px; margin-bottom: 2rem;">
+                <h3 style="color: #ffccdd; margin-bottom: 1.5rem; font-size: 1.4rem;">Question \${currentQuizQuestion + 1}/\${loveQuestions.length}</h3>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; color: white;">\${question.question}</p>
+                <div style="display: grid; gap: 1rem;">
+                  \${question.options.map((option, index) => \`
+                    <button onclick="answerQuestion(\${index})" style="
+                      padding: 1rem;
+                      background: rgba(255,255,255,0.2);
+                      border: 2px solid rgba(255,255,255,0.4);
+                      border-radius: 10px;
+                      color: white;
+                      cursor: pointer;
+                      transition: all 0.3s;
+                      text-align: left;
+                      font-size: 1.1rem;
+                    " onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">
+                      \${option}
+                    </button>
+                  \`).join('')}
+                </div>
+              </div>
+            \`;
+          } else {
+            showLoveConfessions();
+          }
+        }
+        
+        function answerQuestion(selectedIndex) {
+          const question = loveQuestions[currentQuizQuestion];
+          const quizContainer = document.getElementById('quiz-container');
+          
+          if (selectedIndex === question.correct) {
+            quizContainer.innerHTML += \`
+              <div style="background: rgba(0,255,0,0.2); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 2px solid rgba(0,255,0,0.5);">
+                <h4 style="color: #90ee90; margin-bottom: 1rem;">💕 Perfect Answer! 💕</h4>
+                <p style="color: white; font-size: 1.2rem;">\${question.response}</p>
+              </div>
+            \`;
+          } else {
+            quizContainer.innerHTML += \`
+              <div style="background: rgba(255,100,100,0.2); padding: 1.5rem; border-radius: 10px; margin: 1rem 0; border: 2px solid rgba(255,100,100,0.5);">
+                <h4 style="color: #ffaaaa; margin-bottom: 1rem;">💖 Close, but... 💖</h4>
+                <p style="color: white; font-size: 1.2rem;">\${question.response}</p>
+              </div>
+            \`;
+          }
+          
+          currentQuizQuestion++;
+          setTimeout(() => {
+            if (currentQuizQuestion < loveQuestions.length) {
+              showQuizQuestion();
+            } else {
+              setTimeout(showLoveConfessions, 2000);
+            }
+          }, 3000);
+        }
+        
+        function showLoveConfessions() {
+          document.getElementById('phase-2').style.display = 'none';
+          document.getElementById('phase-3').style.display = 'block';
+          
+          const confessionContainer = document.getElementById('confession-container');
+          confessionContainer.innerHTML = '';
+          
+          passionateConfessions.forEach((confession, index) => {
+            setTimeout(() => {
+              const confessionDiv = document.createElement('div');
+              confessionDiv.style.cssText = \`
+                background: rgba(255,255,255,0.15);
+                padding: 1.5rem;
+                border-radius: 15px;
+                margin: 1rem 0;
+                border-left: 4px solid #ff4081;
+                animation: scale-in 0.8s ease-out;
+                font-size: 1.2rem;
+                line-height: 1.6;
+              \`;
+              confessionDiv.textContent = confession;
+              confessionContainer.appendChild(confessionDiv);
+              
+              if (index === passionateConfessions.length - 1) {
+                setTimeout(() => {
+                  const finalButton = document.createElement('button');
+                  finalButton.onclick = showFinalCommitment;
+                  finalButton.style.cssText = \`
+                    padding: 1.5rem 2.5rem;
+                    background: linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,200,220,0.4));
+                    border: 2px solid rgba(255,255,255,0.6);
+                    border-radius: 15px;
+                    color: white;
+                    cursor: pointer;
+                    font-weight: 700;
+                    font-size: 1.3rem;
+                    transition: all 0.3s;
+                    backdrop-filter: blur(10px);
+                    margin-top: 2rem;
+                    animation: romantic-glow 2s ease-in-out infinite alternate;
+                  \`;
+                  finalButton.textContent = '💍 Ready for My Final Commitment 💍';
+                  confessionContainer.appendChild(finalButton);
+                }, 2000);
+              }
+            }, index * 1500);
+          });
+        }
+        
+        function showFinalCommitment() {
+          document.getElementById('phase-3').style.display = 'none';
+          document.getElementById('phase-4').style.display = 'block';
+        }
+        
+        function closeLoveExperience() {
+          document.getElementById('romantic-experience').remove();
+        }
+      </script>
     `;
     
     document.body.appendChild(loveDiv);
