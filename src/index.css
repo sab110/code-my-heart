@@ -33,20 +33,23 @@
     --input: 240 20% 15%;
     --ring: 320 60% 60%;
 
-    /* Romantic Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(320 80% 70%), hsl(340 70% 60%), hsl(280 60% 50%));
-    --gradient-galaxy: radial-gradient(ellipse at top, hsl(320 40% 15%), hsl(280 50% 8%), hsl(240 80% 4%));
-    --gradient-heart: linear-gradient(45deg, hsl(340 90% 70%), hsl(320 80% 60%));
-    --gradient-code: linear-gradient(90deg, hsl(200 100% 80%), hsl(320 70% 70%));
-    --gradient-cheesecake: linear-gradient(135deg, hsl(45 100% 85%), hsl(40 90% 75%), hsl(35 80% 65%));
-    --gradient-love: linear-gradient(180deg, hsl(320 60% 60%), hsl(280 70% 50%), hsl(340 80% 60%));
+    /* Passionate Romance Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(340 90% 75%), hsl(320 85% 65%), hsl(300 80% 55%));
+    --gradient-galaxy: radial-gradient(ellipse at center, hsl(340 30% 15%), hsl(320 40% 8%), hsl(280 60% 4%), hsl(240 80% 2%));
+    --gradient-heart: linear-gradient(45deg, hsl(350 95% 75%), hsl(340 90% 65%), hsl(330 85% 55%));
+    --gradient-code: linear-gradient(90deg, hsl(200 100% 85%), hsl(320 80% 75%), hsl(340 90% 65%));
+    --gradient-cheesecake: linear-gradient(135deg, hsl(45 100% 88%), hsl(40 95% 78%), hsl(35 90% 68%));
+    --gradient-love: linear-gradient(180deg, hsl(340 80% 70%), hsl(320 85% 60%), hsl(300 90% 50%));
+    --gradient-passion: linear-gradient(45deg, hsl(0 80% 60%), hsl(340 90% 70%), hsl(320 95% 80%));
+    --gradient-intimate: linear-gradient(135deg, hsl(320 70% 50%), hsl(340 80% 60%), hsl(300 85% 55%));
 
-    /* Shadows & Glows */
-    --shadow-romantic: 0 20px 60px -10px hsl(320 80% 60% / 0.4);
-    --shadow-heart: 0 0 40px hsl(320 90% 70% / 0.8);
-    --shadow-code: 0 0 25px hsl(200 100% 80% / 0.5);
-    --glow-pulse: 0 0 30px hsl(320 90% 80% / 0.9);
-    --shadow-cheesecake: 0 10px 30px hsl(45 100% 60% / 0.3);
+    /* Sensual Shadows & Glows */
+    --shadow-romantic: 0 25px 80px -15px hsl(340 90% 70% / 0.6);
+    --shadow-heart: 0 0 50px hsl(340 95% 75% / 0.9);
+    --shadow-code: 0 0 35px hsl(200 100% 85% / 0.7);
+    --glow-pulse: 0 0 40px hsl(340 95% 85% / 1);
+    --shadow-cheesecake: 0 15px 40px hsl(45 100% 70% / 0.4);
+    --shadow-passion: 0 0 60px hsl(340 90% 70% / 0.8);
 
     /* Typography */
     --font-code: 'Fira Code', monospace;
@@ -124,34 +127,75 @@
 }
 
 @layer components {
-  /* Romantic Animations */
+  /* Passionate Romance Animations */
   .heart-pulse {
-    animation: heart-pulse 2s ease-in-out infinite;
+    animation: heart-pulse 1.5s ease-in-out infinite;
+  }
+
+  .passion-pulse {
+    animation: passion-pulse 2.5s ease-in-out infinite;
   }
 
   .code-glow {
     text-shadow: var(--shadow-code);
-    animation: code-glow 3s ease-in-out infinite alternate;
+    animation: code-glow 2s ease-in-out infinite alternate;
   }
 
   .romantic-glow {
     box-shadow: var(--glow-pulse);
-    animation: romantic-glow 2s ease-in-out infinite alternate;
+    animation: romantic-glow 1.8s ease-in-out infinite alternate;
+  }
+
+  .passion-glow {
+    box-shadow: var(--shadow-passion);
+    animation: passion-glow 2s ease-in-out infinite alternate;
   }
 
   .floating {
-    animation: floating 6s ease-in-out infinite;
+    animation: floating 4s ease-in-out infinite;
+  }
+
+  .sensual-float {
+    animation: sensual-float 5s ease-in-out infinite;
   }
 
   .typewriter {
     overflow: hidden;
     white-space: nowrap;
-    animation: typewriter 4s steps(40) 1s both;
+    animation: typewriter 3s steps(50) 1s both;
+  }
+
+  .slow-reveal {
+    animation: slow-reveal 4s ease-out forwards;
   }
 
   .cursor::after {
     content: '|';
-    animation: cursor-blink 1s infinite;
+    animation: cursor-blink 0.8s infinite;
+    color: hsl(340 90% 70%);
+  }
+
+  /* Love Note Cards */
+  .love-note {
+    background: linear-gradient(135deg, hsl(340 20% 8%), hsl(320 30% 12%), hsl(300 40% 8%));
+    border: 1px solid hsl(340 40% 20%);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    animation: note-entrance 2s ease-out forwards;
+  }
+
+  .love-note::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 40%, hsl(340 80% 70% / 0.1) 50%, transparent 60%);
+    animation: love-shimmer 4s ease-in-out infinite;
   }
 
   /* Particle Background */
@@ -169,8 +213,8 @@
     position: absolute;
     background: white;
     border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 3s infinite;
+    opacity: 0.9;
+    animation: passionate-twinkle 2s infinite;
   }
 
   /* Button Variants */
@@ -299,25 +343,47 @@
   }
 }
 
-/* Keyframe Animations */
+/* Passionate Keyframe Animations */
 @keyframes heart-pulse {
   0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.15); box-shadow: var(--shadow-heart); }
+}
+
+@keyframes passion-pulse {
+  0%, 100% { 
+    transform: scale(1); 
+    box-shadow: 0 0 30px hsl(340 90% 70% / 0.6);
+  }
+  50% { 
+    transform: scale(1.08); 
+    box-shadow: 0 0 50px hsl(340 90% 70% / 0.9), 0 0 80px hsl(340 90% 70% / 0.5);
+  }
 }
 
 @keyframes code-glow {
-  0% { text-shadow: 0 0 10px hsl(200 100% 80% / 0.5); }
-  100% { text-shadow: 0 0 20px hsl(200 100% 80% / 0.8), 0 0 30px hsl(280 60% 70% / 0.5); }
+  0% { text-shadow: 0 0 15px hsl(200 100% 85% / 0.6); }
+  100% { text-shadow: 0 0 25px hsl(200 100% 85% / 0.9), 0 0 40px hsl(340 90% 70% / 0.6); }
 }
 
 @keyframes romantic-glow {
-  0% { box-shadow: 0 0 20px hsl(320 80% 70% / 0.4); }
-  100% { box-shadow: 0 0 30px hsl(320 80% 70% / 0.8), 0 0 40px hsl(320 80% 70% / 0.4); }
+  0% { box-shadow: 0 0 25px hsl(340 90% 80% / 0.5); }
+  100% { box-shadow: 0 0 40px hsl(340 90% 80% / 0.9), 0 0 60px hsl(340 90% 80% / 0.5); }
+}
+
+@keyframes passion-glow {
+  0% { box-shadow: 0 0 30px hsl(340 90% 70% / 0.6); }
+  100% { box-shadow: 0 0 50px hsl(340 90% 70% / 0.9), 0 0 80px hsl(340 90% 70% / 0.4); }
 }
 
 @keyframes floating {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(2deg); }
+}
+
+@keyframes sensual-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
+  33% { transform: translateY(-15px) rotate(1deg); opacity: 1; }
+  66% { transform: translateY(-30px) rotate(-1deg); opacity: 0.9; }
 }
 
 @keyframes typewriter {
@@ -325,19 +391,37 @@
   100% { width: 100%; }
 }
 
+@keyframes slow-reveal {
+  0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0px) scale(1); }
+}
+
 @keyframes cursor-blink {
   0%, 50% { opacity: 1; }
   51%, 100% { opacity: 0; }
 }
 
-@keyframes twinkle {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+@keyframes passionate-twinkle {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); filter: blur(1px); }
 }
 
-@keyframes yes-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 20px hsl(320 80% 60% / 0.5); }
-  50% { transform: scale(1.05); box-shadow: 0 0 30px hsl(320 80% 60% / 0.8); }
+@keyframes note-entrance {
+  0% { 
+    opacity: 0; 
+    transform: translateY(50px) scale(0.9) rotateX(10deg); 
+    filter: blur(2px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0px) scale(1) rotateX(0deg); 
+    filter: blur(0px);
+  }
+}
+
+@keyframes love-shimmer {
+  0% { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(400%) skewX(-15deg); }
 }
 
 @keyframes confetti-fall {
@@ -351,6 +435,6 @@
 }
 
 @keyframes photo-entrance {
-  0% { opacity: 0; transform: scale(0.8) translateY(30px); }
-  100% { opacity: 1; transform: scale(1) translateY(0px); }
+  0% { opacity: 0; transform: scale(0.8) translateY(40px) rotateY(10deg); }
+  100% { opacity: 1; transform: scale(1) translateY(0px) rotateY(0deg); }
 }

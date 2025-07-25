@@ -1,7 +1,7 @@
-import ProposalPage from './ProposalPage';
+import PassionateLovePage from './PassionateLovePage';
 
 const Index = () => {
-  return <ProposalPage />;
+  return <PassionateLovePage />;
 };
 
 export default Index;
