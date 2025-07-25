@@ -160,6 +160,11 @@ const PassionateLovePage = () => {
 
   const ourMemories = [
     {
+      title: "🏢 First JBS Interaction",
+      memory: "I was so nervous around you that I called you just to fake a conversation, desperate for any excuse to be near you and breathe in your intoxicating scent. Sitting alone in that room, my heart racing, knowing you were close.",
+      emoji: "💼"
+    },
+    {
       title: "💼 First LinkedIn Message",
       memory: "That nervous professional message I sent you that turned into the most beautiful conversation of my life. Who knew LinkedIn could lead to love?",
       emoji: "💻"
