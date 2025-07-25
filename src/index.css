@@ -34,16 +34,19 @@
     --ring: 320 60% 60%;
 
     /* Romantic Gradients */
-    --gradient-romantic: linear-gradient(135deg, hsl(320 60% 60%), hsl(280 60% 50%), hsl(240 60% 40%));
-    --gradient-galaxy: linear-gradient(180deg, hsl(240 100% 4%), hsl(260 80% 8%), hsl(280 60% 12%));
-    --gradient-heart: linear-gradient(45deg, hsl(320 80% 60%), hsl(340 80% 50%));
-    --gradient-code: linear-gradient(90deg, hsl(200 100% 80%), hsl(280 60% 70%));
+    --gradient-romantic: linear-gradient(135deg, hsl(320 80% 70%), hsl(340 70% 60%), hsl(280 60% 50%));
+    --gradient-galaxy: radial-gradient(ellipse at top, hsl(320 40% 15%), hsl(280 50% 8%), hsl(240 80% 4%));
+    --gradient-heart: linear-gradient(45deg, hsl(340 90% 70%), hsl(320 80% 60%));
+    --gradient-code: linear-gradient(90deg, hsl(200 100% 80%), hsl(320 70% 70%));
+    --gradient-cheesecake: linear-gradient(135deg, hsl(45 100% 85%), hsl(40 90% 75%), hsl(35 80% 65%));
+    --gradient-love: linear-gradient(180deg, hsl(320 60% 60%), hsl(280 70% 50%), hsl(340 80% 60%));
 
     /* Shadows & Glows */
-    --shadow-romantic: 0 20px 40px -10px hsl(320 60% 60% / 0.3);
-    --shadow-heart: 0 0 30px hsl(320 80% 60% / 0.6);
-    --shadow-code: 0 0 20px hsl(200 100% 80% / 0.4);
-    --glow-pulse: 0 0 20px hsl(320 80% 70% / 0.8);
+    --shadow-romantic: 0 20px 60px -10px hsl(320 80% 60% / 0.4);
+    --shadow-heart: 0 0 40px hsl(320 90% 70% / 0.8);
+    --shadow-code: 0 0 25px hsl(200 100% 80% / 0.5);
+    --glow-pulse: 0 0 30px hsl(320 90% 80% / 0.9);
+    --shadow-cheesecake: 0 10px 30px hsl(45 100% 60% / 0.3);
 
     /* Typography */
     --font-code: 'Fira Code', monospace;
@@ -245,6 +248,34 @@
     font-size: 0.75rem;
     z-index: 1;
   }
+
+  /* Photo Effects */
+  .photo-frame {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-romantic);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .photo-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    pointer-events: none;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .cheesecake-text {
+    background: var(--gradient-cheesecake);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: var(--shadow-cheesecake);
+  }
 }
 
 @layer utilities {
@@ -261,6 +292,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .love-glow {
+    filter: drop-shadow(0 0 20px hsl(320 80% 70% / 0.6));
   }
 }
 
@@ -308,4 +343,14 @@
 @keyframes confetti-fall {
   0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
   100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes photo-entrance {
+  0% { opacity: 0; transform: scale(0.8) translateY(30px); }
+  100% { opacity: 1; transform: scale(1) translateY(0px); }
 }
