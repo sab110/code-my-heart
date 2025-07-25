@@ -4,8 +4,10 @@ import TypewriterText from '../components/TypewriterText';
 import ConfettiEffect from '../components/ConfettiEffect';
 import HeartIcon from '../components/HeartIcon';
 import { Heart, Sparkles, Stars, Code, Coffee, Moon, Sun, Zap, Flame, Eye } from 'lucide-react';
+import { useToast } from "@/hooks/use-toast";
 
 const PassionateLovePage = () => {
+  const { toast } = useToast();
   const [currentSection, setCurrentSection] = useState(0);
   const [showPhotos, setShowPhotos] = useState(false);
   const [showLoveNotes, setShowLoveNotes] = useState(false);
@@ -16,6 +18,27 @@ const PassionateLovePage = () => {
   const [showFutureDreams, setShowFutureDreams] = useState(false);
   const [clickedHearts, setClickedHearts] = useState(0);
   const [showSecretMessage, setShowSecretMessage] = useState(false);
+
+  const seductiveToasts = [
+    { title: "🔥 Heart Racing!", message: "Your touch makes my soul burn with desire, my sweet cheesecake! 💕" },
+    { title: "✨ Breathless!", message: "Every glance from you steals my breath and ignites my passion! 🌙" },
+    { title: "💋 Intoxicated!", message: "I'm drunk on your love, addicted to your kiss, lost in your eyes! 🍰" },
+    { title: "🌹 Obsessed!", message: "You're my beautiful obsession, my sweetest addiction! 💖" },
+    { title: "🔥 Consumed!", message: "Your love consumes every fiber of my being, my gorgeous queen! 👑" },
+    { title: "💕 Enchanted!", message: "You've cast a spell on my heart that I never want broken! ✨" },
+    { title: "🌙 Dreaming!", message: "Every dream I have is filled with your beautiful face! 💫" },
+    { title: "💍 Forever!", message: "I want to worship you for all eternity, my sweet cheesecake! 🍰" }
+  ];
+
+  const showSeductiveToast = () => {
+    const randomToast = seductiveToasts[Math.floor(Math.random() * seductiveToasts.length)];
+    toast({
+      title: randomToast.title,
+      description: randomToast.message,
+      duration: 4000,
+      className: "bg-gradient-to-r from-primary/20 to-accent/20 border-primary/30 text-foreground"
+    });
+  };
 
   const passionateLoveNotes = [
     {
@@ -277,9 +300,9 @@ const PassionateLovePage = () => {
       {/* Main Content */}
       <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8">
         
-        {/* Passionate Header */}
-        <div className="text-center mb-8 relative">
-          <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
+        {/* Passionate Header - Fixed spacing */}
+        <div className="text-center mb-8 relative pt-20">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
             <div className="flex gap-8 justify-center relative">
               <Heart className="w-12 h-12 text-primary intoxicating-glow" />
               <Stars className="w-16 h-16 text-primary-glow desire-pulse" />
@@ -338,7 +361,11 @@ const PassionateLovePage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-5xl">
-              <div className="love-note intimate-pulse group" style={{ animationDelay: '0s' }}>
+              <div 
+                className="love-note intimate-pulse group cursor-pointer" 
+                style={{ animationDelay: '0s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg"></div>
                 </div>
@@ -356,7 +383,11 @@ const PassionateLovePage = () => {
                 </div>
               </div>
 
-              <div className="love-note magnetic-pull group" style={{ animationDelay: '0.5s' }}>
+              <div 
+                className="love-note magnetic-pull group cursor-pointer" 
+                style={{ animationDelay: '0.5s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-25 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-tr from-accent/20 to-primary/30 rounded-lg"></div>
                 </div>
@@ -374,7 +405,11 @@ const PassionateLovePage = () => {
                 </div>
               </div>
 
-              <div className="love-note hypnotic-sway group" style={{ animationDelay: '1s' }}>
+              <div 
+                className="love-note hypnotic-sway group cursor-pointer" 
+                style={{ animationDelay: '1s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-bl from-primary/25 to-primary-glow/20 rounded-lg"></div>
                 </div>
@@ -395,7 +430,11 @@ const PassionateLovePage = () => {
 
             {/* Couple Photos with Deep Messages */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
-              <div className="love-note seductive-glow group" style={{ animationDelay: '1.5s' }}>
+              <div 
+                className="love-note seductive-glow group cursor-pointer" 
+                style={{ animationDelay: '1.5s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-35 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-t from-primary/30 to-accent/25 rounded-lg"></div>
                 </div>
@@ -413,7 +452,11 @@ const PassionateLovePage = () => {
                 </div>
               </div>
 
-              <div className="love-note romantic-breathe group" style={{ animationDelay: '2s' }}>
+              <div 
+                className="love-note romantic-breathe group cursor-pointer" 
+                style={{ animationDelay: '2s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-40 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-br from-accent/35 to-primary/25 rounded-lg"></div>
                 </div>
@@ -431,7 +474,11 @@ const PassionateLovePage = () => {
                 </div>
               </div>
 
-              <div className="love-note dreamy-drift group" style={{ animationDelay: '2.5s' }}>
+              <div 
+                className="love-note dreamy-drift group cursor-pointer" 
+                style={{ animationDelay: '2.5s' }}
+                onClick={showSeductiveToast}
+              >
                 <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-45 transition-opacity duration-700">
                   <div className="w-full h-full bg-gradient-to-tl from-primary/40 to-primary-glow/30 rounded-lg"></div>
                 </div>
@@ -515,8 +562,9 @@ const PassionateLovePage = () => {
               {futureDreams.map((dream, index) => (
                 <div 
                   key={index} 
-                  className="love-note hypnotic-sway group"
+                  className="love-note hypnotic-sway group cursor-pointer"
                   style={{ animationDelay: `${index * 600}ms` }}
+                  onClick={showSeductiveToast}
                 >
                   <div className="flex items-start gap-4 relative z-10">
                     <div className="text-5xl group-hover:scale-125 transition-transform duration-700 seductive-bounce">
