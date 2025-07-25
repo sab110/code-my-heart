@@ -471,65 +471,69 @@ const PassionateLovePage = () => {
         z-index: 10000;
         animation: passion-entrance 1.5s ease-out;
         overflow-y: auto;
+        padding: 1rem;
       ">
-        <!-- Floating romantic elements -->
-        <div style="position: absolute; top: 10%; left: 10%; animation: float 3s ease-in-out infinite;">💕</div>
-        <div style="position: absolute; top: 20%; right: 15%; animation: float 2.5s ease-in-out infinite 0.5s;">🌹</div>
-        <div style="position: absolute; bottom: 15%; left: 20%; animation: float 3.5s ease-in-out infinite 1s;">✨</div>
-        <div style="position: absolute; bottom: 25%; right: 10%; animation: float 2.8s ease-in-out infinite 1.5s;">💍</div>
-        <div style="position: absolute; top: 50%; left: 5%; animation: float 3.2s ease-in-out infinite 0.8s;">🔥</div>
-        <div style="position: absolute; top: 40%; right: 5%; animation: float 2.7s ease-in-out infinite 2s;">🍰</div>
+        <!-- Floating romantic elements - mobile optimized -->
+        <div style="position: absolute; top: 5%; left: 5%; animation: float 3s ease-in-out infinite; font-size: 1.5rem;">💕</div>
+        <div style="position: absolute; top: 10%; right: 10%; animation: float 2.5s ease-in-out infinite 0.5s; font-size: 1.5rem;">🌹</div>
+        <div style="position: absolute; bottom: 10%; left: 15%; animation: float 3.5s ease-in-out infinite 1s; font-size: 1.5rem;">✨</div>
+        <div style="position: absolute; bottom: 15%; right: 5%; animation: float 2.8s ease-in-out infinite 1.5s; font-size: 1.5rem;">💍</div>
+        <div style="position: absolute; top: 40%; left: 2%; animation: float 3.2s ease-in-out infinite 0.8s; font-size: 1.5rem;">🔥</div>
+        <div style="position: absolute; top: 30%; right: 2%; animation: float 2.7s ease-in-out infinite 2s; font-size: 1.5rem;">🍰</div>
 
         <div style="
           text-align: center;
           color: white;
           font-family: 'Inter', sans-serif;
-          max-width: 700px;
-          padding: 2rem;
+          max-width: min(700px, 95vw);
+          padding: 1.5rem;
           backdrop-filter: blur(20px);
           border-radius: 20px;
           border: 2px solid rgba(255,255,255,0.3);
           box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+          margin: auto;
         ">
           <div id="game-content">
             <!-- Phase 1: Initial Explosion -->
             <div id="phase-1" style="animation: scale-in 1s ease-out;">
-              <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(255,255,255,0.8); animation: heartbeat 2s ease-in-out infinite;">
+              <h1 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(255,255,255,0.8); animation: heartbeat 2s ease-in-out infinite;">
                 💕 YES TO FOREVER! 💕
               </h1>
-              <p style="font-size: 1.6rem; margin-bottom: 2rem; line-height: 1.6; text-shadow: 0 0 10px rgba(255,255,255,0.5);">
+              <p style="font-size: clamp(1rem, 3vw, 1.6rem); margin-bottom: 2rem; line-height: 1.6; text-shadow: 0 0 10px rgba(255,255,255,0.5);">
                 My beautiful cheesecake, you've just made me the happiest man alive! 
                 But wait... let's make this even more special! 🍰💍
               </p>
               
-              <!-- Mini Love Game 1: Heart Collection -->
-              <div style="margin: 2rem 0; padding: 1.5rem; background: rgba(255,255,255,0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);">
-                <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #ffccdd;">💖 Love Game 1: Collect My Hearts 💖</h3>
-                <p style="margin-bottom: 1rem; font-size: 1.1rem;">Click all the hearts to unlock my deepest confession!</p>
-                <div id="heart-game" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin: 1rem 0;">
-                  <span class="clickable-heart" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite;">💖</span>
-                  <span class="clickable-heart" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.3s;">💕</span>
-                  <span class="clickable-heart" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.6s;">💗</span>
-                  <span class="clickable-heart" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.9s;">💓</span>
-                  <span class="clickable-heart" style="font-size: 2rem; cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 1.2s;">💘</span>
+              <!-- Mini Love Game 1: Heart Collection - Mobile optimized -->
+              <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255,255,255,0.15); border-radius: 15px; border: 1px solid rgba(255,255,255,0.3);">
+                <h3 style="font-size: clamp(1rem, 3vw, 1.4rem); margin-bottom: 1rem; color: #ffccdd;">💖 Love Game 1: Collect My Hearts 💖</h3>
+                <p style="margin-bottom: 1rem; font-size: clamp(0.9rem, 2.5vw, 1.1rem);">Click all the hearts to unlock my deepest confession!</p>
+                <div id="heart-game" style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin: 1rem 0;">
+                  <span class="clickable-heart" style="font-size: clamp(1.5rem, 4vw, 2rem); cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite;">💖</span>
+                  <span class="clickable-heart" style="font-size: clamp(1.5rem, 4vw, 2rem); cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.3s;">💕</span>
+                  <span class="clickable-heart" style="font-size: clamp(1.5rem, 4vw, 2rem); cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.6s;">💗</span>
+                  <span class="clickable-heart" style="font-size: clamp(1.5rem, 4vw, 2rem); cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 0.9s;">💓</span>
+                  <span class="clickable-heart" style="font-size: clamp(1.5rem, 4vw, 2rem); cursor: pointer; transition: all 0.3s; opacity: 0.7; animation: pulse 1.5s infinite 1.2s;">💘</span>
                 </div>
-                <div id="heart-count" style="font-size: 1.2rem; color: #ffddee;">Hearts Collected: <span id="collected">0</span>/5</div>
+                <div id="heart-count" style="font-size: clamp(1rem, 2.5vw, 1.2rem); color: #ffddee;">Hearts Collected: <span id="collected">0</span>/5</div>
               </div>
               
               <button id="continue-btn" style="
-                padding: 1.2rem 2.5rem;
+                padding: 1rem 2rem;
                 background: linear-gradient(45deg, rgba(255,255,255,0.4), rgba(255,200,220,0.4));
                 border: 2px solid rgba(255,255,255,0.6);
                 border-radius: 15px;
                 color: white;
                 cursor: pointer;
                 font-weight: 700;
-                font-size: 1.3rem;
+                font-size: clamp(1rem, 2.5vw, 1.3rem);
                 transition: all 0.3s;
                 backdrop-filter: blur(10px);
                 text-shadow: 0 0 10px rgba(0,0,0,0.5);
                 box-shadow: 0 10px 30px rgba(255,255,255,0.2);
                 animation: romantic-glow 2s ease-in-out infinite alternate;
+                width: 100%;
+                max-width: 400px;
               ">
                 💘 Continue Our Love Journey 💘
               </button>
@@ -682,27 +686,27 @@ const PassionateLovePage = () => {
       <ConfettiEffect isActive={showConfetti} />
       
       {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-8">
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-2 sm:px-4 lg:px-8 py-4 sm:py-8">
         
-        {/* Passionate Header - Fixed spacing */}
-        <div className="text-center mb-8 relative pt-20">
-          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-            <div className="flex gap-8 justify-center relative">
-              <Heart className="w-12 h-12 text-primary intoxicating-glow" />
-              <Stars className="w-16 h-16 text-primary-glow desire-pulse" />
-              <Sparkles className="w-10 h-10 text-accent love-intoxication" />
-              <Heart className="w-12 h-12 text-primary intoxicating-glow" style={{ animationDelay: '1s' }} />
+        {/* Passionate Header - Mobile optimized */}
+        <div className="text-center mb-6 sm:mb-8 relative pt-16 sm:pt-20 w-full max-w-4xl">
+          <div className="absolute -top-2 sm:-top-4 left-1/2 transform -translate-x-1/2">
+            <div className="flex gap-3 sm:gap-6 md:gap-8 justify-center relative scale-75 sm:scale-100">
+              <Heart className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary intoxicating-glow" />
+              <Stars className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 text-primary-glow desire-pulse" />
+              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-accent love-intoxication" />
+              <Heart className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary intoxicating-glow" style={{ animationDelay: '1s' }} />
               
               {/* Orbiting Love Elements */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-accent hypnotic-orbit" style={{ animationDelay: '0s' }} />
-                <Flame className="w-5 h-5 text-primary hypnotic-orbit" style={{ animationDelay: '2s' }} />
-                <Eye className="w-4 h-4 text-primary-glow hypnotic-orbit" style={{ animationDelay: '4s' }} />
+                <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-accent hypnotic-orbit" style={{ animationDelay: '0s' }} />
+                <Flame className="w-4 h-4 sm:w-5 sm:h-5 text-primary hypnotic-orbit" style={{ animationDelay: '2s' }} />
+                <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-primary-glow hypnotic-orbit" style={{ animationDelay: '4s' }} />
               </div>
             </div>
           </div>
           
-          <div className="cheesecake-text text-4xl md:text-6xl font-bold mb-4 seductive-glow">
+          <div className="cheesecake-text text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-3 sm:mb-4 seductive-glow px-2">
             <TypewriterText 
               text="My Sweet Cheesecake 🍰✨" 
               speed={120}
@@ -710,7 +714,7 @@ const PassionateLovePage = () => {
             />
           </div>
           
-          <div className="gradient-text text-xl md:text-3xl font-semibold mb-3 romantic-breathe">
+          <div className="gradient-text text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-2 sm:mb-3 romantic-breathe px-2">
             <TypewriterText 
               text="This is my heart speaking to yours..." 
               speed={90}
@@ -718,7 +722,7 @@ const PassionateLovePage = () => {
             />
           </div>
           
-          <div className="code-text text-lg md:text-xl font-mono love-whisper">
+          <div className="code-text text-base sm:text-lg md:text-xl font-mono love-whisper px-2">
             <TypewriterText 
               text="// Loading infinite love for Vadiya Saleem..." 
               speed={80}
@@ -727,8 +731,8 @@ const PassionateLovePage = () => {
           </div>
 
           {/* Floating Love Elements */}
-          <div className="absolute -bottom-8 left-0 right-0">
-            <div className="flex justify-center gap-12">
+          <div className="absolute -bottom-6 sm:-bottom-8 left-0 right-0">
+            <div className="flex justify-center gap-6 sm:gap-8 md:gap-12 scale-75 sm:scale-100">
               <Coffee className="w-6 h-6 text-accent magnetic-pull" style={{ animationDelay: '0.5s' }} />
               <Code className="w-8 h-8 text-primary-glow hypnotic-sway" style={{ animationDelay: '1s' }} />
               <Moon className="w-7 h-7 text-muted-foreground dreamy-drift" style={{ animationDelay: '1.5s' }} />
@@ -738,13 +742,13 @@ const PassionateLovePage = () => {
 
         {/* Beautiful Photo Gallery with Passionate Captions */}
         {showPhotos && (
-          <div className="mb-12 slow-reveal">
-            <div className="text-center mb-6">
-              <h2 className="gradient-text text-3xl md:text-4xl font-bold mb-2">Every Moment With You 💕</h2>
-              <p className="text-muted-foreground text-lg">You're the most beautiful thing in my world</p>
+          <div className="mb-8 sm:mb-12 slow-reveal w-full max-w-6xl px-2 sm:px-4">
+            <div className="text-center mb-4 sm:mb-6">
+              <h2 className="gradient-text text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Every Moment With You 💕</h2>
+              <p className="text-muted-foreground text-base sm:text-lg">You're the most beautiful thing in my world</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               <div 
                 className="love-note intimate-pulse group cursor-pointer transform hover:scale-105 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/40" 
                 style={{ animationDelay: '0s' }}
@@ -759,17 +763,17 @@ const PassionateLovePage = () => {
                 <img 
                   src="/lovable-uploads/2de6c1bc-1bde-494a-8f51-84b3938f7c12.png" 
                   alt="My Beautiful Cheesecake" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 seductive-glow group-hover:scale-110 group-hover:brightness-110 transition-all duration-700 hover:shadow-lg hover:shadow-primary/30"
+                  className="w-full h-48 sm:h-56 object-cover rounded-lg mb-3 sm:mb-4 seductive-glow group-hover:scale-110 group-hover:brightness-110 transition-all duration-700 hover:shadow-lg hover:shadow-primary/30"
                 />
-                <h3 className="cheesecake-text text-xl font-bold mb-2 relative z-10 group-hover:text-primary-glow transition-all duration-500">My Beautiful Queen 👑</h3>
-                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
+                <h3 className="cheesecake-text text-lg sm:text-xl font-bold mb-2 relative z-10 group-hover:text-primary-glow transition-all duration-500">My Beautiful Queen 👑</h3>
+                <p className="text-foreground text-xs sm:text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
                   Every time I look at you, I fall in love all over again. Your beauty isn't just what I see - it's what I feel in my soul when you smile.
                 </p>
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-80 transition-all duration-500">
-                  <Heart className="w-6 h-6 text-primary romantic-breathe animate-pulse" />
+                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary romantic-breathe animate-pulse" />
                 </div>
-                <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-60 transition-all duration-700">
-                  <Sparkles className="w-4 h-4 text-accent animate-bounce" />
+                <div className="absolute -top-1 sm:-top-2 -right-1 sm:-right-2 opacity-0 group-hover:opacity-60 transition-all duration-700">
+                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-accent animate-bounce" />
                 </div>
               </div>
 
@@ -787,14 +791,17 @@ const PassionateLovePage = () => {
                 <img 
                   src="/lovable-uploads/b3028270-d0de-458f-a60e-a05bd8397711.png" 
                   alt="Sweet Moments" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 romantic-breathe group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-48 sm:h-56 object-cover rounded-lg mb-3 sm:mb-4 dreamy-drift group-hover:scale-110 group-hover:brightness-110 transition-all duration-700 hover:shadow-lg hover:shadow-accent/30"
                 />
-                <h3 className="gradient-text text-xl font-bold mb-2 relative z-10">Pure Sweetness 🌸</h3>
-                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-accent transition-colors duration-500">
-                  The way you sit, the way you think, the way you exist in this world - everything about you is poetry in motion, my sweet cheesecake.
+                <h3 className="code-text text-lg sm:text-xl font-bold mb-2 relative z-10 group-hover:text-accent transition-all duration-500">Perfect Moments 💫</h3>
+                <p className="text-foreground text-xs sm:text-sm leading-relaxed relative z-10 group-hover:text-accent transition-colors duration-500">
+                  Every photo with you is a memory I want to treasure forever. You make every moment feel magical, every second worth living.
                 </p>
-                <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-50 transition-opacity duration-500">
-                  <Sparkles className="w-6 h-6 text-accent dreamy-drift" />
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-80 transition-all duration-500">
+                  <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-accent dreamy-drift animate-pulse" />
+                </div>
+                <div className="absolute -top-1 sm:-top-2 -left-1 sm:-left-2 opacity-0 group-hover:opacity-60 transition-all duration-700">
+                  <Stars className="w-3 h-3 sm:w-4 sm:h-4 text-primary animate-spin" />
                 </div>
               </div>
 
@@ -822,7 +829,7 @@ const PassionateLovePage = () => {
             </div>
 
             {/* Couple Photos with Deep Messages */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               <div 
                 className="love-note seductive-glow group cursor-pointer" 
                 style={{ animationDelay: '1.5s' }}
@@ -894,15 +901,15 @@ const PassionateLovePage = () => {
 
         {/* Sweet Memories Section */}
         {showMemories && (
-          <div className="mb-12 w-full max-w-5xl slow-reveal">
-            <div className="text-center mb-8">
-              <h2 className="cheesecake-text text-4xl md:text-5xl font-bold mb-4 seductive-glow">
+          <div className="mb-8 sm:mb-12 w-full max-w-6xl slow-reveal px-2 sm:px-4">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="cheesecake-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 seductive-glow">
                 Our Sweet Memories 🌟
               </h2>
-              <p className="text-muted-foreground text-lg">Every moment with you is a treasure I keep in my heart</p>
+              <p className="text-muted-foreground text-base sm:text-lg">Every moment with you is a treasure I keep in my heart</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {ourMemories.map((memory, index) => (
                 <div 
                   key={index} 
@@ -910,19 +917,19 @@ const PassionateLovePage = () => {
                   style={{ animationDelay: `${index * 500}ms` }}
                   onClick={handleHeartClick}
                 >
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="text-6xl group-hover:scale-110 transition-transform duration-500 intoxicating-glow">
+                  <div className="flex items-start gap-3 sm:gap-4 relative z-10">
+                    <div className="text-4xl sm:text-5xl md:text-6xl group-hover:scale-110 transition-transform duration-500 intoxicating-glow">
                       {memory.emoji}
                     </div>
                     <div className="flex-1">
-                      <h3 className="gradient-text text-2xl font-bold mb-3">{memory.title}</h3>
-                      <p className="text-foreground text-base leading-relaxed group-hover:text-primary-glow transition-colors duration-500">
+                      <h3 className="gradient-text text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{memory.title}</h3>
+                      <p className="text-foreground text-sm sm:text-base leading-relaxed group-hover:text-primary-glow transition-colors duration-500">
                         {memory.memory}
                       </p>
                     </div>
                   </div>
                   <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-50 transition-opacity duration-500">
-                    <Heart className="w-6 h-6 text-primary romantic-breathe" />
+                    <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary romantic-breathe" />
                   </div>
                 </div>
               ))}
@@ -943,15 +950,15 @@ const PassionateLovePage = () => {
 
         {/* Future Dreams Section */}
         {showFutureDreams && (
-          <div className="mb-12 w-full max-w-5xl slow-reveal">
-            <div className="text-center mb-8">
-              <h2 className="gradient-text text-4xl md:text-5xl font-bold mb-4 desire-pulse">
+          <div className="mb-8 sm:mb-12 w-full max-w-6xl slow-reveal px-2 sm:px-4">
+            <div className="text-center mb-6 sm:mb-8">
+              <h2 className="gradient-text text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 desire-pulse">
                 Our Future Together 🌈
               </h2>
-              <p className="text-muted-foreground text-lg">All the beautiful tomorrows I dream of with you</p>
+              <p className="text-muted-foreground text-base sm:text-lg">All the beautiful tomorrows I dream of with you</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
               {futureDreams.map((dream, index) => (
                 <div 
                   key={index} 
@@ -959,19 +966,19 @@ const PassionateLovePage = () => {
                   style={{ animationDelay: `${index * 600}ms` }}
                   onClick={showSeductiveToast}
                 >
-                  <div className="flex items-start gap-4 relative z-10">
-                    <div className="text-5xl group-hover:scale-125 transition-transform duration-700 seductive-bounce">
+                  <div className="flex items-start gap-3 sm:gap-4 relative z-10">
+                    <div className="text-3xl sm:text-4xl md:text-5xl group-hover:scale-125 transition-transform duration-700 seductive-bounce">
                       {dream.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="cheesecake-text text-2xl font-bold mb-3">{dream.title}</h3>
-                      <p className="text-foreground text-base leading-relaxed group-hover:text-accent transition-colors duration-500">
+                      <h3 className="cheesecake-text text-lg sm:text-xl md:text-2xl font-bold mb-2 sm:mb-3">{dream.title}</h3>
+                      <p className="text-foreground text-sm sm:text-base leading-relaxed group-hover:text-accent transition-colors duration-500">
                         {dream.dream}
                       </p>
                     </div>
                   </div>
                   <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-40 transition-opacity duration-500">
-                    <Stars className="w-6 h-6 text-accent dreamy-drift" />
+                    <Stars className="w-5 h-5 sm:w-6 sm:h-6 text-accent dreamy-drift" />
                   </div>
                 </div>
               ))}
@@ -979,12 +986,12 @@ const PassionateLovePage = () => {
           </div>
         )}
 
-        {/* Floating Love Poem */}
-        <div className="fixed top-4 right-4 z-30 max-w-xs">
-          <div className="love-note hypnotic-sway p-4 cursor-pointer group" onClick={handleHeartClick}>
+        {/* Floating Love Poem - Mobile optimized */}
+        <div className="fixed top-2 sm:top-4 right-2 sm:right-4 z-30 max-w-xs">
+          <div className="love-note hypnotic-sway p-3 sm:p-4 cursor-pointer group" onClick={handleHeartClick}>
             <div className="text-center">
-              <Heart className="w-6 h-6 text-primary mx-auto mb-2 romantic-breathe" />
-              <p className="cheesecake-text text-sm font-medium leading-relaxed">
+              <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-primary mx-auto mb-2 romantic-breathe" />
+              <p className="cheesecake-text text-xs sm:text-sm font-medium leading-relaxed">
                 "In every line of code I write,<br/>
                 Your name appears in soft moonlight.<br/>
                 You're my syntax, my perfect flow,<br/>
