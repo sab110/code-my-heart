@@ -367,34 +367,43 @@ const PassionateLovePage = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-5xl">
               <div 
-                className="love-note intimate-pulse group cursor-pointer" 
+                className="love-note intimate-pulse group cursor-pointer transform hover:scale-105 transition-all duration-700 hover:shadow-2xl hover:shadow-primary/40" 
                 style={{ animationDelay: '0s' }}
                 onClick={showSeductiveToast}
               >
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-700">
-                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg"></div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/40 to-accent/30 rounded-lg blur-sm"></div>
+                </div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-50 transition-opacity duration-1000">
+                  <div className="w-full h-full bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse"></div>
                 </div>
                 <img 
                   src="/lovable-uploads/2de6c1bc-1bde-494a-8f51-84b3938f7c12.png" 
                   alt="My Beautiful Cheesecake" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 seductive-glow group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-56 object-cover rounded-lg mb-4 seductive-glow group-hover:scale-110 group-hover:brightness-110 transition-all duration-700 hover:shadow-lg hover:shadow-primary/30"
                 />
-                <h3 className="cheesecake-text text-xl font-bold mb-2 relative z-10">My Beautiful Queen 👑</h3>
+                <h3 className="cheesecake-text text-xl font-bold mb-2 relative z-10 group-hover:text-primary-glow transition-all duration-500">My Beautiful Queen 👑</h3>
                 <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
                   Every time I look at you, I fall in love all over again. Your beauty isn't just what I see - it's what I feel in my soul when you smile.
                 </p>
-                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-60 transition-opacity duration-500">
-                  <Heart className="w-6 h-6 text-primary romantic-breathe" />
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-80 transition-all duration-500">
+                  <Heart className="w-6 h-6 text-primary romantic-breathe animate-pulse" />
+                </div>
+                <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-60 transition-all duration-700">
+                  <Sparkles className="w-4 h-4 text-accent animate-bounce" />
                 </div>
               </div>
 
               <div 
-                className="love-note magnetic-pull group cursor-pointer" 
+                className="love-note magnetic-pull group cursor-pointer transform hover:scale-105 hover:rotate-1 transition-all duration-700 hover:shadow-2xl hover:shadow-accent/40" 
                 style={{ animationDelay: '0.5s' }}
                 onClick={showSeductiveToast}
               >
-                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-25 transition-opacity duration-700">
-                  <div className="w-full h-full bg-gradient-to-tr from-accent/20 to-primary/30 rounded-lg"></div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-35 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-tr from-accent/30 to-primary/40 rounded-lg blur-sm"></div>
+                </div>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-40 transition-opacity duration-1000">
+                  <div className="w-full h-full bg-gradient-to-l from-transparent via-accent/25 to-transparent animate-pulse"></div>
                 </div>
                 <img 
                   src="/lovable-uploads/b3028270-d0de-458f-a60e-a05bd8397711.png" 
