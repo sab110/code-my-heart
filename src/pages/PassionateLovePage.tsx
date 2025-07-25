@@ -16,73 +16,119 @@ const PassionateLovePage = () => {
   const passionateLoveNotes = [
     {
       title: "💕 My Sweet Cheesecake",
-      message: "Every morning I wake up thinking about you, every night I fall asleep with your smile in my mind. You're not just my girlfriend - you're my entire universe wrapped in the sweetest person I know.",
+      message: "Every morning I wake up thinking about you, every night I fall asleep with your smile in my mind. You're not just my girlfriend - you're my entire universe wrapped in the sweetest person I know. The way you move, the way you breathe, everything about you is intoxicating.",
       delay: 2000
     },
     {
       title: "🌙 When You Sleep",
-      message: "Even when you're sleeping peacefully next to me, my heart races just looking at you. Your breathing is like the most beautiful rhythm, and I could watch you dream forever.",
+      message: "Even when you're sleeping peacefully next to me, my heart races just looking at you. Your breathing is like the most beautiful rhythm, and I could watch you dream forever. I love how you curl up against me, how safe you feel in my arms.",
       delay: 4000
     },
     {
       title: "🔥 You Drive Me Crazy",
-      message: "The way you laugh, the way you look at me when you think I'm not watching, the way you say my name... Every little thing about you makes me fall deeper and deeper in love.",
+      message: "The way you laugh, the way you look at me when you think I'm not watching, the way you say my name... Every little thing about you makes me fall deeper and deeper in love. Your touch sends electricity through my soul, your kiss is my favorite addiction.",
       delay: 6000
     },
     {
       title: "✨ My Deepest Desire",
-      message: "I want to wake up next to you every single day for the rest of my life. I want to be the reason you smile, the shoulder you cry on, and the hand you hold through everything.",
+      message: "I want to wake up next to you every single day for the rest of my life. I want to be the reason you smile, the shoulder you cry on, and the hand you hold through everything. I want to love you so passionately that time stops when we're together.",
       delay: 8000
     },
     {
       title: "💍 Forever and Always",
-      message: "I don't just want to marry you, cheesecake... I want to love you so deeply that our souls become one. I want to build a life so beautiful with you that every day feels like a dream.",
+      message: "I don't just want to marry you, cheesecake... I want to love you so deeply that our souls become one. I want to build a life so beautiful with you that every day feels like a dream. You're my addiction, my obsession, my everything.",
       delay: 10000
+    },
+    {
+      title: "🍰 My Sweet Addiction",
+      message: "You taste sweeter than any dessert, my beautiful cheesecake. Every kiss from you is like tasting heaven. I'm completely addicted to your love, your touch, your everything. You're the sweetest temptation I never want to resist.",
+      delay: 12000
+    },
+    {
+      title: "🔥 Burning Passion",
+      message: "The fire you ignite in my heart burns hotter than a thousand suns. When you look at me with those gorgeous eyes, I melt completely. You're my flame, my passion, my burning desire that never dies.",
+      delay: 14000
+    },
+    {
+      title: "💖 Heartbeat Symphony",
+      message: "My heart beats only for you, creating a symphony of love that echoes through my entire being. Every pulse whispers your name, every breath is a prayer of gratitude for having you in my life, my sweet cheesecake.",
+      delay: 16000
     }
   ];
 
   const passionateCode = [
     "// My Heart's Source Code - For Vadiya Saleem 💕",
+    "// WARNING: Contains extremely high levels of love",
     "const vadiya = new Person({",
     "  name: 'Vadiya Saleem',",
     "  nickname: 'My Sweet Cheesecake 🍰',",
     "  birthday: '2001-02-09',",
     "  beauty: INFINITE,",
-    "  laughter: 'Melody of my soul',",
-    "  eyes: 'Windows to paradise'",
+    "  sweetness: 'Sweeter than all desserts combined',",
+    "  laughter: 'Melody that heals my soul',",
+    "  eyes: 'Windows to paradise',",
+    "  touch: 'Electric fire that ignites my being',",
+    "  kiss: 'Taste of heaven on earth',",
+    "  presence: 'My favorite addiction'",
     "});",
     "",
     "// My love for you is an infinite loop",
     "while(myHeartBeats) {",
     "  thinkAbout(vadiya.smile);",
+    "  crave(vadiya.touch);",
+    "  remember(vadiya.laugh);",
     "  feelGrateful(vadiya.exists);", 
     "  dreamAbout(ourFuture);",
     "  love.intensity += EXPONENTIALLY;",
+    "  passion.burn(HOTTER);",
     "}",
     "",
     "// Every function in my life returns to you",
     "function myPurpose() {",
-    "  return 'To love and cherish Vadiya forever';",
+    "  return 'To love, protect and worship Vadiya forever';",
+    "}",
+    "",
+    "function myDesire() {",
+    "  return 'Wake up next to my cheesecake every day';",
     "}",
     "",
     "function myHappiness() {",
     "  if (vadiya.isWithMe()) {",
     "    return MAX_VALUE;",
     "  }",
-    "  return waiting.forHer();",
+    "  return waiting.forHer() && missing.herKiss();",
+    "}",
+    "",
+    "function myObsession() {",
+    "  return [",
+    "    'Her morning voice',",
+    "    'The way she says my name',", 
+    "    'How she curls up in my arms',",
+    "    'Her sleepy smile',",
+    "    'Every little thing about her'",
+    "  ];",
     "}",
     "",
     "// Ready to commit to forever",
     "const proposal = {",
     "  question: 'Will you marry me, my sweet cheesecake?',",
-    "  promise: 'To love you beyond infinity',",
-    "  commitment: 'Forever and always',",
-    "  ring: '💍'",
+    "  promise: 'To love you beyond infinity and time',",
+    "  commitment: 'Forever and always, through everything',",
+    "  ring: '💍',",
+    "  vows: 'You are my heart, my soul, my everything'",
     "};",
     "",
-    "git add ourLove",
+    "// Creating our love repository",
+    "git init ourLoveStory",
+    "git add vadiya.heart",
+    "git add myDevotion.eternal", 
+    "git add ourDreams.together",
     "git commit -m 'The beginning of our forever story 💕'",
-    "git push origin marriage --force-with-love"
+    "git branch marriage",
+    "git checkout marriage", 
+    "git merge hearts --allow-unrelated-histories",
+    "git push origin marriage --force-with-love",
+    "// Repository status: DEEPLY_IN_LOVE ✅"
   ];
 
   useEffect(() => {
@@ -304,15 +350,21 @@ const PassionateLovePage = () => {
               <p className="text-muted-foreground text-lg">These are the thoughts that consume my heart every day</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {passionateLoveNotes.map((note, index) => (
                 <div 
                   key={index} 
-                  className="love-note passion-glow"
+                  className="love-note passion-glow group"
                   style={{ animationDelay: `${note.delay}ms` }}
                 >
-                  <h3 className="cheesecake-text text-2xl font-bold mb-4">{note.title}</h3>
-                  <p className="text-foreground text-base leading-relaxed">{note.message}</p>
+                  <div className="absolute -top-4 -right-4 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                    <Heart className="w-12 h-12 text-primary sensual-float" />
+                  </div>
+                  <h3 className="cheesecake-text text-2xl md:text-3xl font-bold mb-6 relative z-10">{note.title}</h3>
+                  <p className="text-foreground text-lg leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">{note.message}</p>
+                  <div className="absolute bottom-4 right-4 opacity-10 group-hover:opacity-30 transition-opacity duration-500">
+                    <Sparkles className="w-8 h-8 text-accent floating" />
+                  </div>
                 </div>
               ))}
             </div>
