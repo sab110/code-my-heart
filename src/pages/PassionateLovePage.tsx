@@ -160,24 +160,24 @@ const PassionateLovePage = () => {
 
   const ourMemories = [
     {
-      title: "🌅 First Morning Text",
-      memory: "Remember our very first 'good morning' text? I knew right then that I wanted to wake up to your messages for the rest of my life.",
-      emoji: "📱"
+      title: "💼 First LinkedIn Message",
+      memory: "That nervous professional message I sent you that turned into the most beautiful conversation of my life. Who knew LinkedIn could lead to love?",
+      emoji: "💻"
     },
     {
-      title: "🎵 Our Song Moments",
-      memory: "Every time our favorite song plays, I think about dancing with you in our kitchen, making breakfast together in our pajamas.",
+      title: "🍝 First Date at Bella Vita",
+      memory: "Your pasta scent mixed with your perfume created the most intoxicating aroma. I knew right then I wanted to share every meal with you forever.",
+      emoji: "🍝"
+    },
+    {
+      title: "🎵 Our YouTube Playlist",
+      memory: "Every time I'm stressed, I put on our playlist and your voice singing along echoes in my mind, instantly calming my soul and filling me with love.",
       emoji: "🎶"
     },
     {
-      title: "🌙 Late Night Calls",
-      memory: "Those 3am conversations where we talked about everything and nothing. Your sleepy voice saying 'I love you' is my favorite lullaby.",
-      emoji: "☎️"
-    },
-    {
-      title: "☕ Coffee Shop Dreams",
-      memory: "I want to take you to little coffee shops around the world, holding your hand across tiny tables, getting lost in your eyes over lattes.",
-      emoji: "☕"
+      title: "🌙 Our Late Night Intimacy",
+      memory: "Those passionate late-night conversations where we shared our deepest desires and dreams. Your words ignite fires in my heart that burn eternal.",
+      emoji: "💕"
     }
   ];
 
