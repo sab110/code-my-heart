@@ -136,6 +136,22 @@
     animation: passion-pulse 2.5s ease-in-out infinite;
   }
 
+  .intimate-pulse {
+    animation: intimate-pulse 3s ease-in-out infinite;
+  }
+
+  .seductive-glow {
+    animation: seductive-glow 2.8s ease-in-out infinite alternate;
+  }
+
+  .romantic-breathe {
+    animation: romantic-breathe 4s ease-in-out infinite;
+  }
+
+  .love-whisper {
+    animation: love-whisper 6s ease-in-out infinite;
+  }
+
   .code-glow {
     text-shadow: var(--shadow-code);
     animation: code-glow 2s ease-in-out infinite alternate;
@@ -159,6 +175,14 @@
     animation: sensual-float 5s ease-in-out infinite;
   }
 
+  .dreamy-drift {
+    animation: dreamy-drift 7s ease-in-out infinite;
+  }
+
+  .hypnotic-sway {
+    animation: hypnotic-sway 8s ease-in-out infinite;
+  }
+
   .typewriter {
     overflow: hidden;
     white-space: nowrap;
@@ -167,6 +191,10 @@
 
   .slow-reveal {
     animation: slow-reveal 4s ease-out forwards;
+  }
+
+  .magnetic-pull {
+    animation: magnetic-pull 5s ease-in-out infinite;
   }
 
   .cursor::after {
@@ -448,4 +476,181 @@
 @keyframes photo-entrance {
   0% { opacity: 0; transform: scale(0.8) translateY(40px) rotateY(10deg); }
   100% { opacity: 1; transform: scale(1) translateY(0px) rotateY(0deg); }
+}
+
+/* New Seductive Animations */
+@keyframes intimate-pulse {
+  0%, 100% { 
+    transform: scale(1) rotateZ(0deg); 
+    filter: hue-rotate(0deg) saturate(1);
+    box-shadow: 0 0 20px hsl(340 80% 60% / 0.4);
+  }
+  25% { 
+    transform: scale(1.03) rotateZ(0.5deg); 
+    filter: hue-rotate(5deg) saturate(1.1);
+    box-shadow: 0 0 35px hsl(340 90% 70% / 0.7);
+  }
+  50% { 
+    transform: scale(1.06) rotateZ(0deg); 
+    filter: hue-rotate(10deg) saturate(1.2);
+    box-shadow: 0 0 50px hsl(340 95% 80% / 0.9);
+  }
+  75% { 
+    transform: scale(1.03) rotateZ(-0.5deg); 
+    filter: hue-rotate(5deg) saturate(1.1);
+    box-shadow: 0 0 35px hsl(340 90% 70% / 0.7);
+  }
+}
+
+@keyframes seductive-glow {
+  0% { 
+    text-shadow: 0 0 20px hsl(340 80% 70% / 0.6);
+    filter: brightness(1);
+  }
+  50% { 
+    text-shadow: 
+      0 0 30px hsl(340 90% 80% / 0.8),
+      0 0 50px hsl(340 95% 85% / 0.6),
+      0 0 70px hsl(340 100% 90% / 0.4);
+    filter: brightness(1.2);
+  }
+  100% { 
+    text-shadow: 0 0 20px hsl(340 80% 70% / 0.6);
+    filter: brightness(1);
+  }
+}
+
+@keyframes romantic-breathe {
+  0%, 100% { 
+    transform: scale(1) translateY(0px);
+    opacity: 0.9;
+  }
+  25% { 
+    transform: scale(1.02) translateY(-2px);
+    opacity: 0.95;
+  }
+  50% { 
+    transform: scale(1.04) translateY(-5px);
+    opacity: 1;
+  }
+  75% { 
+    transform: scale(1.02) translateY(-2px);
+    opacity: 0.95;
+  }
+}
+
+@keyframes love-whisper {
+  0%, 100% { 
+    transform: translateX(0px) rotateY(0deg);
+    filter: blur(0px);
+  }
+  16% { 
+    transform: translateX(2px) rotateY(1deg);
+    filter: blur(0.2px);
+  }
+  33% { 
+    transform: translateX(-1px) rotateY(-0.5deg);
+    filter: blur(0px);
+  }
+  50% { 
+    transform: translateX(3px) rotateY(1.5deg);
+    filter: blur(0.3px);
+  }
+  66% { 
+    transform: translateX(-2px) rotateY(-1deg);
+    filter: blur(0.1px);
+  }
+  83% { 
+    transform: translateX(1px) rotateY(0.5deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes dreamy-drift {
+  0%, 100% { 
+    transform: translate(0px, 0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  14% { 
+    transform: translate(5px, -8px) rotate(1deg);
+    opacity: 0.9;
+  }
+  28% { 
+    transform: translate(-3px, -15px) rotate(-0.5deg);
+    opacity: 1;
+  }
+  42% { 
+    transform: translate(8px, -10px) rotate(1.5deg);
+    opacity: 0.95;
+  }
+  57% { 
+    transform: translate(-5px, -20px) rotate(-1deg);
+    opacity: 1;
+  }
+  71% { 
+    transform: translate(3px, -12px) rotate(0.5deg);
+    opacity: 0.9;
+  }
+  85% { 
+    transform: translate(-2px, -5px) rotate(-0.3deg);
+    opacity: 0.85;
+  }
+}
+
+@keyframes hypnotic-sway {
+  0%, 100% { 
+    transform: translateX(0px) rotateZ(0deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  12.5% { 
+    transform: translateX(8px) rotateZ(1deg) scale(1.01);
+    filter: hue-rotate(15deg);
+  }
+  25% { 
+    transform: translateX(12px) rotateZ(2deg) scale(1.02);
+    filter: hue-rotate(30deg);
+  }
+  37.5% { 
+    transform: translateX(8px) rotateZ(1deg) scale(1.01);
+    filter: hue-rotate(15deg);
+  }
+  50% { 
+    transform: translateX(0px) rotateZ(0deg) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  62.5% { 
+    transform: translateX(-8px) rotateZ(-1deg) scale(1.01);
+    filter: hue-rotate(-15deg);
+  }
+  75% { 
+    transform: translateX(-12px) rotateZ(-2deg) scale(1.02);
+    filter: hue-rotate(-30deg);
+  }
+  87.5% { 
+    transform: translateX(-8px) rotateZ(-1deg) scale(1.01);
+    filter: hue-rotate(-15deg);
+  }
+}
+
+@keyframes magnetic-pull {
+  0%, 100% { 
+    transform: translateY(0px) scale(1);
+    box-shadow: 0 0 0px transparent;
+  }
+  20% { 
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 10px 30px hsl(340 80% 70% / 0.3);
+  }
+  40% { 
+    transform: translateY(-15px) scale(1.04);
+    box-shadow: 0 20px 50px hsl(340 90% 80% / 0.5);
+  }
+  60% { 
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 15px 40px hsl(340 85% 75% / 0.4);
+  }
+  80% { 
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 8px 25px hsl(340 80% 70% / 0.2);
+  }
 }

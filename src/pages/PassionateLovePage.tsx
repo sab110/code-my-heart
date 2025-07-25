@@ -220,15 +220,16 @@ const PassionateLovePage = () => {
         
         {/* Passionate Header */}
         <div className="text-center mb-8 relative">
-          <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-            <div className="flex gap-6">
-              <Heart className="w-8 h-8 text-primary sensual-float passion-glow" />
-              <Stars className="w-10 h-10 text-primary-glow floating" />
-              <Sparkles className="w-6 h-6 text-accent sensual-float" />
+          <div className="absolute -top-16 left-1/2 transform -translate-x-1/2">
+            <div className="flex gap-8 justify-center">
+              <Heart className="w-12 h-12 text-primary intimate-pulse" />
+              <Stars className="w-16 h-16 text-primary-glow dreamy-drift" />
+              <Sparkles className="w-10 h-10 text-accent hypnotic-sway" />
+              <Heart className="w-12 h-12 text-primary intimate-pulse" style={{ animationDelay: '1s' }} />
             </div>
           </div>
           
-          <div className="cheesecake-text text-4xl md:text-6xl font-bold mb-4 passion-pulse">
+          <div className="cheesecake-text text-4xl md:text-6xl font-bold mb-4 seductive-glow">
             <TypewriterText 
               text="My Sweet Cheesecake 🍰✨" 
               speed={120}
@@ -236,7 +237,7 @@ const PassionateLovePage = () => {
             />
           </div>
           
-          <div className="gradient-text text-xl md:text-3xl font-semibold mb-3">
+          <div className="gradient-text text-xl md:text-3xl font-semibold mb-3 romantic-breathe">
             <TypewriterText 
               text="This is my heart speaking to yours..." 
               speed={90}
@@ -244,12 +245,21 @@ const PassionateLovePage = () => {
             />
           </div>
           
-          <div className="code-text text-lg md:text-xl font-mono">
+          <div className="code-text text-lg md:text-xl font-mono love-whisper">
             <TypewriterText 
               text="// Loading infinite love for Vadiya Saleem..." 
               speed={80}
               delay={7000}
             />
+          </div>
+
+          {/* Floating Love Elements */}
+          <div className="absolute -bottom-8 left-0 right-0">
+            <div className="flex justify-center gap-12">
+              <Coffee className="w-6 h-6 text-accent magnetic-pull" style={{ animationDelay: '0.5s' }} />
+              <Code className="w-8 h-8 text-primary-glow hypnotic-sway" style={{ animationDelay: '1s' }} />
+              <Moon className="w-7 h-7 text-muted-foreground dreamy-drift" style={{ animationDelay: '1.5s' }} />
+            </div>
           </div>
         </div>
 
@@ -262,79 +272,115 @@ const PassionateLovePage = () => {
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-5xl">
-              <div className="love-note" style={{ animationDelay: '0s' }}>
+              <div className="love-note intimate-pulse group" style={{ animationDelay: '0s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-br from-primary/30 to-accent/20 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/2de6c1bc-1bde-494a-8f51-84b3938f7c12.png" 
                   alt="My Beautiful Cheesecake" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 seductive-glow group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="cheesecake-text text-xl font-bold mb-2">My Beautiful Queen 👑</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="cheesecake-text text-xl font-bold mb-2 relative z-10">My Beautiful Queen 👑</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
                   Every time I look at you, I fall in love all over again. Your beauty isn't just what I see - it's what I feel in my soul when you smile.
                 </p>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-60 transition-opacity duration-500">
+                  <Heart className="w-6 h-6 text-primary romantic-breathe" />
+                </div>
               </div>
 
-              <div className="love-note" style={{ animationDelay: '0.5s' }}>
+              <div className="love-note magnetic-pull group" style={{ animationDelay: '0.5s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-25 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-tr from-accent/20 to-primary/30 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/b3028270-d0de-458f-a60e-a05bd8397711.png" 
                   alt="Sweet Moments" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 romantic-breathe group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="gradient-text text-xl font-bold mb-2">Pure Sweetness 🌸</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="gradient-text text-xl font-bold mb-2 relative z-10">Pure Sweetness 🌸</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-accent transition-colors duration-500">
                   The way you sit, the way you think, the way you exist in this world - everything about you is poetry in motion, my sweet cheesecake.
                 </p>
+                <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-50 transition-opacity duration-500">
+                  <Sparkles className="w-6 h-6 text-accent dreamy-drift" />
+                </div>
               </div>
 
-              <div className="love-note" style={{ animationDelay: '1s' }}>
+              <div className="love-note hypnotic-sway group" style={{ animationDelay: '1s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-bl from-primary/25 to-primary-glow/20 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/9b08365c-41f4-4646-9efa-4d84d34fa0f5.png" 
                   alt="Adventures Together" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 love-whisper group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="code-text text-xl font-bold mb-2">My Adventure Partner 🏔️</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="code-text text-xl font-bold mb-2 relative z-10">My Adventure Partner 🏔️</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
                   I want to explore every corner of this world with you. You make every moment an adventure, every day a new chapter in our love story.
                 </p>
+                <div className="absolute bottom-2 left-2 opacity-0 group-hover:opacity-40 transition-opacity duration-500">
+                  <Heart className="w-6 h-6 text-primary intimate-pulse" />
+                </div>
               </div>
             </div>
 
             {/* Couple Photos with Deep Messages */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl">
-              <div className="love-note" style={{ animationDelay: '1.5s' }}>
+              <div className="love-note seductive-glow group" style={{ animationDelay: '1.5s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-35 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-t from-primary/30 to-accent/25 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/e6a6f0e2-7486-450c-a8e1-b9975affb650.png" 
                   alt="Our Future Dreams" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 intimate-pulse group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="gradient-text text-xl font-bold mb-2">Our Future Awaits 💍</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="gradient-text text-xl font-bold mb-2 relative z-10">Our Future Awaits 💍</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary transition-colors duration-500">
                   This is how I see us - traditional, beautiful, meant to be. I can't wait to call you my wife and build our forever together.
                 </p>
+                <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-60 transition-opacity duration-500">
+                  <Stars className="w-6 h-6 text-accent sensual-float" />
+                </div>
               </div>
 
-              <div className="love-note" style={{ animationDelay: '2s' }}>
+              <div className="love-note romantic-breathe group" style={{ animationDelay: '2s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-40 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-br from-accent/35 to-primary/25 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/bdf024ac-0030-47ac-99a9-426fd1f36016.png" 
                   alt="Pure Love" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 magnetic-pull group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="cheesecake-text text-xl font-bold mb-2">Pure Love 💕</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="cheesecake-text text-xl font-bold mb-2 relative z-10">Pure Love 💕</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-primary-glow transition-colors duration-500">
                   The tenderness in your eyes, the way you let me hold you close - this is what pure love looks like, feels like, tastes like.
                 </p>
+                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-50 transition-opacity duration-500">
+                  <Heart className="w-8 h-8 text-primary passion-pulse" />
+                </div>
               </div>
 
-              <div className="love-note" style={{ animationDelay: '2.5s' }}>
+              <div className="love-note dreamy-drift group" style={{ animationDelay: '2.5s' }}>
+                <div className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-45 transition-opacity duration-700">
+                  <div className="w-full h-full bg-gradient-to-tl from-primary/40 to-primary-glow/30 rounded-lg"></div>
+                </div>
                 <img 
                   src="/lovable-uploads/f25e7800-7565-462e-ba21-3837c1e87280.png" 
                   alt="Forever Together" 
-                  className="w-full h-56 object-cover rounded-lg mb-4 passion-glow"
+                  className="w-full h-56 object-cover rounded-lg mb-4 hypnotic-sway group-hover:scale-105 transition-transform duration-700"
                 />
-                <h3 className="gradient-text text-xl font-bold mb-2">Forever & Always 💖</h3>
-                <p className="text-foreground text-sm leading-relaxed">
+                <h3 className="gradient-text text-xl font-bold mb-2 relative z-10">Forever & Always 💖</h3>
+                <p className="text-foreground text-sm leading-relaxed relative z-10 group-hover:text-accent transition-colors duration-500">
                   Every day with you feels like a beautiful dream. I want to hold you like this for the rest of our lives, my sweet cheesecake.
                 </p>
+                <div className="absolute top-2 left-2 opacity-0 group-hover:opacity-55 transition-opacity duration-500">
+                  <Moon className="w-6 h-6 text-muted-foreground floating" />
+                </div>
               </div>
             </div>
           </div>
