@@ -2,41 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Romantic Tech Proposal Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Romantic Galaxy Theme */
+    --background: 240 100% 4%;
+    --foreground: 300 20% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Romantic Colors */
+    --primary: 320 60% 60%;
+    --primary-foreground: 300 20% 95%;
+    --primary-glow: 320 80% 70%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --secondary: 280 40% 30%;
+    --secondary-foreground: 300 20% 95%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --accent: 200 100% 80%;
+    --accent-foreground: 240 100% 10%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 240 20% 15%;
+    --muted-foreground: 300 10% 70%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --card: 240 30% 8%;
+    --card-foreground: 300 20% 95%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --border: 240 20% 20%;
+    --input: 240 20% 15%;
+    --ring: 320 60% 60%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Romantic Gradients */
+    --gradient-romantic: linear-gradient(135deg, hsl(320 60% 60%), hsl(280 60% 50%), hsl(240 60% 40%));
+    --gradient-galaxy: linear-gradient(180deg, hsl(240 100% 4%), hsl(260 80% 8%), hsl(280 60% 12%));
+    --gradient-heart: linear-gradient(45deg, hsl(320 80% 60%), hsl(340 80% 50%));
+    --gradient-code: linear-gradient(90deg, hsl(200 100% 80%), hsl(280 60% 70%));
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Shadows & Glows */
+    --shadow-romantic: 0 20px 40px -10px hsl(320 60% 60% / 0.3);
+    --shadow-heart: 0 0 30px hsl(320 80% 60% / 0.6);
+    --shadow-code: 0 0 20px hsl(200 100% 80% / 0.4);
+    --glow-pulse: 0 0 20px hsl(320 80% 70% / 0.8);
 
-    --radius: 0.5rem;
+    /* Typography */
+    --font-code: 'Fira Code', monospace;
+    --font-sans: 'Inter', sans-serif;
+
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,12 +107,207 @@ All colors MUST be HSL.
   }
 }
 
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-galaxy);
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+}
+
+@layer components {
+  /* Romantic Animations */
+  .heart-pulse {
+    animation: heart-pulse 2s ease-in-out infinite;
+  }
+
+  .code-glow {
+    text-shadow: var(--shadow-code);
+    animation: code-glow 3s ease-in-out infinite alternate;
+  }
+
+  .romantic-glow {
+    box-shadow: var(--glow-pulse);
+    animation: romantic-glow 2s ease-in-out infinite alternate;
+  }
+
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+
+  .typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typewriter 4s steps(40) 1s both;
+  }
+
+  .cursor::after {
+    content: '|';
+    animation: cursor-blink 1s infinite;
+  }
+
+  /* Particle Background */
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite;
+  }
+
+  /* Button Variants */
+  .proposal-button {
+    background: var(--gradient-romantic);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .proposal-button:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-romantic);
+  }
+
+  .proposal-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .proposal-button:hover:before {
+    left: 100%;
+  }
+
+  .yes-button {
+    background: var(--gradient-heart);
+    animation: yes-pulse 2s ease-in-out infinite;
+  }
+
+  .no-button {
+    background: linear-gradient(135deg, hsl(240 20% 20%), hsl(240 30% 15%));
+    border: 1px solid hsl(240 20% 30%);
+  }
+
+  /* Terminal Style */
+  .terminal {
+    background: hsl(240 30% 8%);
+    border: 1px solid hsl(240 20% 20%);
+    border-radius: var(--radius);
+    font-family: var(--font-code);
+    position: relative;
+  }
+
+  .terminal::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2rem;
+    background: hsl(240 20% 15%);
+    border-radius: var(--radius) var(--radius) 0 0;
+    border-bottom: 1px solid hsl(240 20% 20%);
+  }
+
+  .terminal::after {
+    content: '● ● ●';
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    color: hsl(300 10% 70%);
+    font-size: 0.75rem;
+    z-index: 1;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    background: var(--gradient-romantic);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .code-text {
+    font-family: var(--font-code);
+    background: var(--gradient-code);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframe Animations */
+@keyframes heart-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes code-glow {
+  0% { text-shadow: 0 0 10px hsl(200 100% 80% / 0.5); }
+  100% { text-shadow: 0 0 20px hsl(200 100% 80% / 0.8), 0 0 30px hsl(280 60% 70% / 0.5); }
+}
+
+@keyframes romantic-glow {
+  0% { box-shadow: 0 0 20px hsl(320 80% 70% / 0.4); }
+  100% { box-shadow: 0 0 30px hsl(320 80% 70% / 0.8), 0 0 40px hsl(320 80% 70% / 0.4); }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes typewriter {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes yes-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px hsl(320 80% 60% / 0.5); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px hsl(320 80% 60% / 0.8); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
